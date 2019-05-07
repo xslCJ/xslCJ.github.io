@@ -1775,7 +1775,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #99ff7a;
+  background: #69f53d;
 }
 .feed-link,
 .chat {
@@ -2366,6 +2366,69 @@ ul.breadcrumb li+li:last-child {
 .tag-cloud a:hover {
   color: #222 !important;
 }
+body {
+  overscroll-behavior: none;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  body:before {
+    right: 0;
+    top: 0;
+    left: 0;
+    height: 100px;
+    z-index: 2147483647;
+    position: fixed;
+    content: "";
+    display: block;
+    transform: translateY(-99.99px);
+    background: linear-gradient(124deg, #f00, #ff7f00, #ff0, #7fff00, #0f0, #00ff7f, #0ff, #007fff, #00f, #7f00ff, #f0f, #ff007f, #f00);
+    animation: rainbow 15s ease infinite;
+    background-size: 1000% 1000%;
+  }
+}
+@-moz-keyframes rainbow {
+  0% {
+    background-position: 0% 80%;
+  }
+  50% {
+    background-position: 100% 20%;
+  }
+  100% {
+    background-position: 0% 80%;
+  }
+}
+@-webkit-keyframes rainbow {
+  0% {
+    background-position: 0% 80%;
+  }
+  50% {
+    background-position: 100% 20%;
+  }
+  100% {
+    background-position: 0% 80%;
+  }
+}
+@-o-keyframes rainbow {
+  0% {
+    background-position: 0% 80%;
+  }
+  50% {
+    background-position: 100% 20%;
+  }
+  100% {
+    background-position: 0% 80%;
+  }
+}
+@keyframes rainbow {
+  0% {
+    background-position: 0% 80%;
+  }
+  50% {
+    background-position: 100% 20%;
+  }
+  100% {
+    background-position: 0% 80%;
+  }
+}
 @media (max-width: 767px) {
   .header-inner,
   .container .main-inner,
@@ -2485,7 +2548,7 @@ embed {
   display: inline-block;
 }
 body {
-  background: url("http://img.netbian.com/file/2017/0326/64aab4ae3e632dbcbf9223995c654317.jpg");
+  background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557248759044&di=a35e4e9550e06409bcdf2561bf15fe1c&imgtype=0&src=http%3A%2F%2Fcdn6.yaochufa.com%2Fuploads%2Fview%2Fcx%2F614%2F0655%2F8031xaoyb3ghsvv.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
