@@ -140,18 +140,18 @@
 
 
 
-  <meta name="description" content="Description给你$n$个数，求出$\sum_{i=1}^{n} a_{i}\times i\qquad$ Input共$n + 1$个数，分别为$n$和$n$个数$a_{i}$($1$$\leq i \le n$)。 Output$\sum_{i=1}^{n} a_{i}\times i\qquad$ ExamplesInput  4 1 2 3 4  Output  30  Solut">
-<meta name="keywords" content="CodeForces题解,模拟">
+  <meta name="description" content="DescriptionPolycarp has guessed three positive integers $a$, $b$ and $c$. He keeps these numbers in secret, but he writes down four numbers on a board in arbitrary order — their pairwise sums (three n">
+<meta name="keywords" content="CodeForces题解,数论">
 <meta property="og:type" content="article">
-<meta property="og:title" content="题解[CodeForces171C]A Piece of Cake">
-<meta property="og:url" content="http://xslcj.github.io/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/index.html">
+<meta property="og:title" content="题解[CodeForces1154A]Restoring Three Numbers.md">
+<meta property="og:url" content="http://xslcj.github.io/2019/05/13/题解-CodeForces1154-A-Restoring-Three-Numbers/index.html">
 <meta property="og:site_name" content="xsl的博客">
-<meta property="og:description" content="Description给你$n$个数，求出$\sum_{i=1}^{n} a_{i}\times i\qquad$ Input共$n + 1$个数，分别为$n$和$n$个数$a_{i}$($1$$\leq i \le n$)。 Output$\sum_{i=1}^{n} a_{i}\times i\qquad$ ExamplesInput  4 1 2 3 4  Output  30  Solut">
+<meta property="og:description" content="DescriptionPolycarp has guessed three positive integers $a$, $b$ and $c$. He keeps these numbers in secret, but he writes down four numbers on a board in arbitrary order — their pairwise sums (three n">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-13T13:47:23.548Z">
+<meta property="og:updated_time" content="2019-05-13T13:37:15.328Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="题解[CodeForces171C]A Piece of Cake">
-<meta name="twitter:description" content="Description给你$n$个数，求出$\sum_{i=1}^{n} a_{i}\times i\qquad$ Input共$n + 1$个数，分别为$n$和$n$个数$a_{i}$($1$$\leq i \le n$)。 Output$\sum_{i=1}^{n} a_{i}\times i\qquad$ ExamplesInput  4 1 2 3 4  Output  30  Solut">
+<meta name="twitter:title" content="题解[CodeForces1154A]Restoring Three Numbers.md">
+<meta name="twitter:description" content="DescriptionPolycarp has guessed three positive integers $a$, $b$ and $c$. He keeps these numbers in secret, but he writes down four numbers on a board in arbitrary order — their pairwise sums (three n">
 
 
 
@@ -159,7 +159,7 @@
 
   
   
-  <link rel="canonical" href="http://xslcj.github.io/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/">
+  <link rel="canonical" href="http://xslcj.github.io/2019/05/13/题解-CodeForces1154-A-Restoring-Three-Numbers/">
 
 
 
@@ -169,7 +169,7 @@
   };
 </script>
 
-  <title>题解[CodeForces171C]A Piece of Cake | xsl的博客</title>
+  <title>题解[CodeForces1154A]Restoring Three Numbers.md | xsl的博客</title>
   
 
 
@@ -388,7 +388,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xslcj.github.io/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/">
+    <link itemprop="mainEntityOfPage" href="http://xslcj.github.io/2019/05/13/题解-CodeForces1154-A-Restoring-Three-Numbers/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xsl">
@@ -405,7 +405,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">题解[CodeForces171C]A Piece of Cake
+          <h1 class="post-title" itemprop="name headline">题解[CodeForces1154A]Restoring Three Numbers.md
 
               
             
@@ -431,7 +431,7 @@
                 
               
 
-              <time title="创建时间：2019-05-13 21:34:01 / 修改时间：21:47:23" itemprop="dateCreated datePublished" datetime="2019-05-13T21:34:01+08:00">2019-05-13</time>
+              <time title="创建时间：2019-05-13 21:15:43 / 修改时间：21:37:15" itemprop="dateCreated datePublished" datetime="2019-05-13T21:15:43+08:00">2019-05-13</time>
             
 
             
@@ -472,8 +472,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/" itemprop="commentCount"></span>
+                <a href="/2019/05/13/题解-CodeForces1154-A-Restoring-Three-Numbers/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/13/题解-CodeForces1154-A-Restoring-Three-Numbers/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -507,22 +507,56 @@
       
 
       
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>给你$n$个数，求出$\sum_{i=1}^{n} a_{i}\times i\qquad$</p>
-<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>共$n + 1$个数，分别为$n$和$n$个数$a_{i}$($1$$\leq i \le n$)。</p>
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>$\sum_{i=1}^{n} a_{i}\times i\qquad$</p>
-<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><p>Input</p>
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Polycarp has guessed three positive integers $a$, $b$ and $c$. He keeps these numbers in secret, but he writes down four numbers on a board in arbitrary order — their pairwise sums (three numbers) and sum of all three numbers (one number). So, there are four numbers on a board in random order: $a+b$, $a+c$, $b+c$ and $a+b+c$.</p>
+<p>You have to guess three numbers $a$, $b$ and $c$ using given numbers. Print three guessed integers in any order.</p>
+<p>Pay attention that some given numbers $a$, $b$ and $c$ can be equal (it is also possible that $a=b=c$).</p>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>The only line of the input contains four positive integers $x_{1}$,$x_{2}$,$x_{3}$,$x_{4}$($2$≤$x_{i}$≤$10^{9}$) — numbers written on a board in random order. It is guaranteed that the answer exists for the given number $x_{1}$,$x_{2}$,$x_{3}$,$x_{4}$.</p>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>Print such positive integers $a$, $b$ and $c$ that four numbers written on a board are values $a+b$, $a+c$, $b+c$ and $a+b+c$ written in some order. Print $a$, $b$ and $c$ in any order. If there are several answers, you can print any. It is guaranteed that the answer exists.</p>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><p>Input1: </p>
 <blockquote>
-<p>4 1 2 3 4</p>
+<p>3 6 5 4</p>
 </blockquote>
-<p>Output</p>
+<p>Output1: </p>
 <blockquote>
-<p>30</p>
+<p>2 1 3</p>
 </blockquote>
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>根据题目翻译可知：这是一道模拟题。</p>
-<p>首先，输入一个整数$n$，接下来输入$n$个整数，分别为$a_{1}$,$a_{2}$, $\cdots$,$a_{n}$ ，要你输出$ans$ $=$ $\sum_{i=1}^{n} a_{i}\times i\qquad$</p>
-<p>我们可以用一层循环来枚举$i$，$i$的范围从$1$ ~ $n$，每次输入$a_{i}$时，就可以将答案$ans$增加$a_{i}$ $\times$ $i$，最后输出答案$ans$即可。</p>
-<p>算法时间复杂度：$\Theta(n)$，空间复杂度：$\Theta(1)$</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;//头文件准备</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用标准名字空间</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span><span class="comment">//快速读入，不解释</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> c = getchar();</span><br><span class="line">    <span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'-'</span>) f = <span class="number">-1</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x = x * <span class="number">10</span> + c - <span class="string">'0'</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, sum;<span class="comment">//n为数字的个数，sum为答案</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">//进入主函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = gi();<span class="comment">//输入数字个数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">int</span> x = gi();<span class="comment">//依次输入每个数</span></span><br><span class="line">        sum = sum + i * x;<span class="comment">//更新答案</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, sum);<span class="comment">//输出最终答案</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//完美结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Input2: </p>
+<blockquote>
+<p>40 40 40 60</p>
+</blockquote>
+<p>Output2: </p>
+<blockquote>
+<p>20 20 20</p>
+</blockquote>
+<p>Input3: </p>
+<blockquote>
+<p>201 101 101 200</p>
+</blockquote>
+<p>Output3: </p>
+<blockquote>
+<p>1 100 100</p>
+</blockquote>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>简化版题意：</p>
+<blockquote>
+<p>有三个正整数$a$, $b$, $c$, 现在给定$x_{1}$ $=$ $a + b$, $x_{2}$ $=$ $a +c$, $x_{3}$ $=$ $b + c$, $x_{4}$ $=$ $a + b + c$。 请求出$a$, $b$, $c$分别是多少。</p>
+</blockquote>
+<p>这是一道数论题。</p>
+<p>我们先整理一下题面告诉我们的信息：</p>
+<ol>
+<li><p>$a$、$b$、$c$是三个正整数；</p>
+</li>
+<li><p>我们会输入4个<strong>乱序</strong>的数字：$x1$、$x2$、$x3$、$x4$；</p>
+</li>
+<li><p>$x_{1}$ = $a$ + $b$ , $x_{2}$ = $a$ + $c$ , $x_{3}$ = $b$ + $c$ , $x_{4}$ = $a$ + $b$ + $c$。</p>
+</li>
+</ol>
+<p>∵$a$、$b$、$c$均＞$0$.</p>
+<p>∴$x_{4}$是这四个数中最大的数。</p>
+<p>至于如何求出$a$、$b$、$c$，则可以：</p>
+<p>用$x_{4} - x_{1}$得到$c$，用$x_{4} - x_{2}$得到$b$，用$x_{4} - x_{3}$得到$a$，最后按顺序输出这三个数即可。</p>
+<p>注意：我们需要开一个数组$x$[]来存储$x_{1}$、$x_{2}$、$x_{3}$、$x_{4}$，因为这样便于我们排序（可以直接调用$c++$库函数$sort$，但要开头文件$algorithm$），而且可以更好地帮助我们寻找到$a$、$b$、$c$。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;//头文件准备</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用标准名字空间</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span><span class="comment">//快速读入，不解释</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> c = getchar();</span><br><span class="line">    <span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'-'</span>)</span><br><span class="line">            f = <span class="number">-1</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x = x * <span class="number">10</span> + c - <span class="string">'0'</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a, b, c, x[<span class="number">5</span>];<span class="comment">//a、b、c和x数组的意义同分析</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span><span class="comment">//分别输入这四个数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	x[<span class="number">1</span>] = gi(), x[<span class="number">2</span>] = gi(), x[<span class="number">3</span>] = gi(), x[<span class="number">4</span>] = gi();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span><span class="comment">//将x数组从小到大排序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	sort(x + <span class="number">1</span>, x + <span class="number">1</span> + <span class="number">4</span>);<span class="comment">//1和4是指从x[1]到x[4]从小到大排序</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">output</span><span class="params">()</span><span class="comment">//输出的自函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>, x[<span class="number">4</span>] - x[<span class="number">1</span>], x[<span class="number">4</span>] - x[<span class="number">2</span>], x[<span class="number">4</span>] - x[<span class="number">3</span>]);<span class="comment">//分别输出a、b、c。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">//进入干净整洁的主函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	init();<span class="comment">//输入</span></span><br><span class="line">	solve();<span class="comment">//排序解决问题</span></span><br><span class="line">	output();<span class="comment">//输出</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//养成return 0的好习惯</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -556,7 +590,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://xslcj.github.io/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/" title="题解[CodeForces171C]A Piece of Cake">http://xslcj.github.io/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/</a>
+    <a href="http://xslcj.github.io/2019/05/13/题解-CodeForces1154-A-Restoring-Three-Numbers/" title="题解[CodeForces1154A]Restoring Three Numbers.md">http://xslcj.github.io/2019/05/13/题解-CodeForces1154-A-Restoring-Three-Numbers/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -580,7 +614,7 @@
           
             <a href="/tags/CodeForces题解/" rel="tag"># CodeForces题解</a>
           
-            <a href="/tags/模拟/" rel="tag"># 模拟</a>
+            <a href="/tags/数论/" rel="tag"># 数论</a>
           
         </div>
       
@@ -593,8 +627,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/13/题解-CodeForces1154-A-Restoring-Three-Numbers/" rel="next" title="题解[CodeForces1154A]Restoring Three Numbers.md">
-                <i class="fa fa-chevron-left"></i> 题解[CodeForces1154A]Restoring Three Numbers.md
+              <a href="/2019/05/12/NOIP2018游记/" rel="next" title="NOIP2018游记">
+                <i class="fa fa-chevron-left"></i> NOIP2018游记
               </a>
             
           </div>
@@ -602,6 +636,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/" rel="prev" title="题解[CodeForces171C]A Piece of Cake">
+                题解[CodeForces171C]A Piece of Cake <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
