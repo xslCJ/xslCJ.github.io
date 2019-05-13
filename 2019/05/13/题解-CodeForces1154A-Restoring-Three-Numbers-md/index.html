@@ -16,7 +16,7 @@
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
@@ -141,14 +141,14 @@
 
 
   <meta name="description" content="DescriptionPolycarp has guessed three positive integers $a$, $b$ and $c$. He keeps these numbers in secret, but he writes down four numbers on a board in arbitrary order — their pairwise sums (three n">
-<meta name="keywords" content="CodeForces题解, 数论">
+<meta name="keywords" content="CodeForces题解,数论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解[CodeForces1154A]Restoring Three Numbers.md">
 <meta property="og:url" content="http://xslcj.github.io/2019/05/13/题解-CodeForces1154A-Restoring-Three-Numbers-md/index.html">
 <meta property="og:site_name" content="xsl的博客">
 <meta property="og:description" content="DescriptionPolycarp has guessed three positive integers $a$, $b$ and $c$. He keeps these numbers in secret, but he writes down four numbers on a board in arbitrary order — their pairwise sums (three n">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-13T13:16:34.431Z">
+<meta property="og:updated_time" content="2019-05-13T13:28:16.457Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解[CodeForces1154A]Restoring Three Numbers.md">
 <meta name="twitter:description" content="DescriptionPolycarp has guessed three positive integers $a$, $b$ and $c$. He keeps these numbers in secret, but he writes down four numbers on a board in arbitrary order — their pairwise sums (three n">
@@ -206,7 +206,7 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
@@ -217,7 +217,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -414,7 +414,7 @@
                 
               
 
-              <time title="创建时间：2019-05-13 21:15:43 / 修改时间：21:16:34" itemprop="dateCreated datePublished" datetime="2019-05-13T21:15:43+08:00">2019-05-13</time>
+              <time title="创建时间：2019-05-13 21:15:43 / 修改时间：21:28:16" itemprop="dateCreated datePublished" datetime="2019-05-13T21:15:43+08:00">2019-05-13</time>
             
 
             
@@ -577,7 +577,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CodeForces题解-数论/" rel="tag"># CodeForces题解, 数论</a>
+            <a href="/tags/CodeForces题解/" rel="tag"># CodeForces题解</a>
+          
+            <a href="/tags/数论/" rel="tag"># 数论</a>
           
         </div>
       
@@ -694,7 +696,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -970,6 +974,53 @@
   
 
   
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+  
+
 
   
 

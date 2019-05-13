@@ -16,7 +16,7 @@
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
@@ -148,7 +148,7 @@
 <meta property="og:site_name" content="xsl的博客">
 <meta property="og:description" content="我很荣幸能够参加NOIP2018！ 感谢指导老师多年来的指导，也要感谢CCF的组织！ 11月10日下午1:30我顺利地到达了长沙理工大学云塘新校区 准备参加NOIP2018普及组的比赛。 进入大厅就碰见了cjy一行人（他肯定比我666），于是就和他们聊天到了进考场。 下午2:00刚进入考场，找到我的电脑，发现我的电脑开机卡死了！！！ 于是赶紧向监考老师示意，老师让我考试开始再换机器（难受），我只好">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-13T13:04:19.025Z">
+<meta property="og:updated_time" content="2019-05-13T13:28:24.207Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NOIP2018游记">
 <meta name="twitter:description" content="我很荣幸能够参加NOIP2018！ 感谢指导老师多年来的指导，也要感谢CCF的组织！ 11月10日下午1:30我顺利地到达了长沙理工大学云塘新校区 准备参加NOIP2018普及组的比赛。 进入大厅就碰见了cjy一行人（他肯定比我666），于是就和他们聊天到了进考场。 下午2:00刚进入考场，找到我的电脑，发现我的电脑开机卡死了！！！ 于是赶紧向监考老师示意，老师让我考试开始再换机器（难受），我只好">
@@ -206,7 +206,7 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
@@ -217,7 +217,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -431,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-13 21:04:19" itemprop="dateModified" datetime="2019-05-13T21:04:19+08:00">2019-05-13</time>
+                <time title="修改时间：2019-05-13 21:28:24" itemprop="dateModified" datetime="2019-05-13T21:28:24+08:00">2019-05-13</time>
               
             
           </span>
@@ -713,7 +713,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -989,6 +991,53 @@
   
 
   
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+  
+
 
   
 
