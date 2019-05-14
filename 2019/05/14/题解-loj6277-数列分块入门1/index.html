@@ -140,18 +140,18 @@
 
 
 
-  <meta name="description" content="Description给你$n$个数，求出$\sum_{i=1}^{n} a_{i}\times i\qquad$ Input共$n + 1$个数，分别为$n$和$n$个数$a_{i}$($1$$\leq i \le n$)。 Output$\sum_{i=1}^{n} a_{i}\times i\qquad$ ExamplesInput  4 1 2 3 4  Output  30  Solut">
-<meta name="keywords" content="CodeForces题解,模拟">
+  <meta name="description" content="题目描述给出一个长为$n$的数列，以及$n$个操作，操作涉及区间加法，单点查值。 输入格式第一行输入一个数字$n$。 第二行输入$n$个数字，第$i$个数字为$a_{i}$，以空格隔开。 接下来输入$n$行询问，每行输入四个数字$opt$、$l$、$r$、$c$，以空格隔开。 若$opt = 0$，表示将位于$[l, r]$的之间的数字都加$c$。 若$opt = 1$，表示询问$a_{r}$的值">
+<meta name="keywords" content="loj,分块">
 <meta property="og:type" content="article">
-<meta property="og:title" content="题解[CodeForces171C]A Piece of Cake">
-<meta property="og:url" content="http://xslcj.github.io/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/index.html">
+<meta property="og:title" content="题解[loj6277]数列分块入门1">
+<meta property="og:url" content="http://xslcj.github.io/2019/05/14/题解-loj6277-数列分块入门1/index.html">
 <meta property="og:site_name" content="RainbowCloud的小屋">
-<meta property="og:description" content="Description给你$n$个数，求出$\sum_{i=1}^{n} a_{i}\times i\qquad$ Input共$n + 1$个数，分别为$n$和$n$个数$a_{i}$($1$$\leq i \le n$)。 Output$\sum_{i=1}^{n} a_{i}\times i\qquad$ ExamplesInput  4 1 2 3 4  Output  30  Solut">
+<meta property="og:description" content="题目描述给出一个长为$n$的数列，以及$n$个操作，操作涉及区间加法，单点查值。 输入格式第一行输入一个数字$n$。 第二行输入$n$个数字，第$i$个数字为$a_{i}$，以空格隔开。 接下来输入$n$行询问，每行输入四个数字$opt$、$l$、$r$、$c$，以空格隔开。 若$opt = 0$，表示将位于$[l, r]$的之间的数字都加$c$。 若$opt = 1$，表示询问$a_{r}$的值">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-13T13:47:23.548Z">
+<meta property="og:updated_time" content="2019-05-14T14:39:32.438Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="题解[CodeForces171C]A Piece of Cake">
-<meta name="twitter:description" content="Description给你$n$个数，求出$\sum_{i=1}^{n} a_{i}\times i\qquad$ Input共$n + 1$个数，分别为$n$和$n$个数$a_{i}$($1$$\leq i \le n$)。 Output$\sum_{i=1}^{n} a_{i}\times i\qquad$ ExamplesInput  4 1 2 3 4  Output  30  Solut">
+<meta name="twitter:title" content="题解[loj6277]数列分块入门1">
+<meta name="twitter:description" content="题目描述给出一个长为$n$的数列，以及$n$个操作，操作涉及区间加法，单点查值。 输入格式第一行输入一个数字$n$。 第二行输入$n$个数字，第$i$个数字为$a_{i}$，以空格隔开。 接下来输入$n$行询问，每行输入四个数字$opt$、$l$、$r$、$c$，以空格隔开。 若$opt = 0$，表示将位于$[l, r]$的之间的数字都加$c$。 若$opt = 1$，表示询问$a_{r}$的值">
 
 
 
@@ -159,7 +159,7 @@
 
   
   
-  <link rel="canonical" href="http://xslcj.github.io/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/">
+  <link rel="canonical" href="http://xslcj.github.io/2019/05/14/题解-loj6277-数列分块入门1/">
 
 
 
@@ -169,7 +169,7 @@
   };
 </script>
 
-  <title>题解[CodeForces171C]A Piece of Cake | RainbowCloud的小屋</title>
+  <title>题解[loj6277]数列分块入门1 | RainbowCloud的小屋</title>
   
 
 
@@ -388,7 +388,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xslcj.github.io/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/">
+    <link itemprop="mainEntityOfPage" href="http://xslcj.github.io/2019/05/14/题解-loj6277-数列分块入门1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RainbowCloud">
@@ -405,7 +405,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">题解[CodeForces171C]A Piece of Cake
+          <h1 class="post-title" itemprop="name headline">题解[loj6277]数列分块入门1
 
               
             
@@ -431,7 +431,7 @@
                 
               
 
-              <time title="创建时间：2019-05-13 21:34:01 / 修改时间：21:47:23" itemprop="dateCreated datePublished" datetime="2019-05-13T21:34:01+08:00">2019-05-13</time>
+              <time title="创建时间：2019-05-14 22:05:43 / 修改时间：22:39:32" itemprop="dateCreated datePublished" datetime="2019-05-14T22:05:43+08:00">2019-05-14</time>
             
 
             
@@ -472,8 +472,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/" itemprop="commentCount"></span>
+                <a href="/2019/05/14/题解-loj6277-数列分块入门1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/14/题解-loj6277-数列分块入门1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -507,22 +507,38 @@
       
 
       
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>给你$n$个数，求出$\sum_{i=1}^{n} a_{i}\times i\qquad$</p>
-<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>共$n + 1$个数，分别为$n$和$n$个数$a_{i}$($1$$\leq i \le n$)。</p>
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>$\sum_{i=1}^{n} a_{i}\times i\qquad$</p>
-<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><p>Input</p>
-<blockquote>
-<p>4 1 2 3 4</p>
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给出一个长为$n$的数列，以及$n$个操作，操作涉及区间加法，单点查值。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行输入一个数字$n$。</p>
+<p>第二行输入$n$个数字，第$i$个数字为$a_{i}$，以空格隔开。</p>
+<p>接下来输入$n$行询问，每行输入四个数字$opt$、$l$、$r$、$c$，以空格隔开。</p>
+<p>若$opt = 0$，表示将位于$[l, r]$的之间的数字都加$c$。</p>
+<p>若$opt = 1$，表示询问$a_{r}$的值（$l$和$c$忽略）。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>对于每次询问，输出一行一个数字表示答案。</p>
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><blockquote>
+<p>4</p>
+<p>1 2 2 3</p>
+<p>0 1 3 1</p>
+<p>1 0 1 0</p>
+<p>0 1 2 2</p>
+<p>1 0 2 0</p>
 </blockquote>
-<p>Output</p>
-<blockquote>
-<p>30</p>
+<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><blockquote>
+<p>2</p>
+<p>5</p>
 </blockquote>
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>根据题目翻译可知：这是一道模拟题。</p>
-<p>首先，输入一个整数$n$，接下来输入$n$个整数，分别为$a_{1}$,$a_{2}$, $\cdots$,$a_{n}$ ，要你输出$ans$ $=$ $\sum_{i=1}^{n} a_{i}\times i\qquad$</p>
-<p>我们可以用一层循环来枚举$i$，$i$的范围从$1$ ~ $n$，每次输入$a_{i}$时，就可以将答案$ans$增加$a_{i}$ $\times$ $i$，最后输出答案$ans$即可。</p>
-<p>算法时间复杂度：$\Theta(n)$，空间复杂度：$\Theta(1)$</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;//头文件准备</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用标准名字空间</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span><span class="comment">//快速读入，不解释</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> c = getchar();</span><br><span class="line">    <span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'-'</span>) f = <span class="number">-1</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x = x * <span class="number">10</span> + c - <span class="string">'0'</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, sum;<span class="comment">//n为数字的个数，sum为答案</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">//进入主函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = gi();<span class="comment">//输入数字个数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">int</span> x = gi();<span class="comment">//依次输入每个数</span></span><br><span class="line">        sum = sum + i * x;<span class="comment">//更新答案</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, sum);<span class="comment">//输出最终答案</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//完美结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数据范围与提示"><a href="#数据范围与提示" class="headerlink" title="数据范围与提示"></a>数据范围与提示</h3><p>对于所有的数据，$1 \leq n \le 50000$ ，$-2^{31} \leq others、ans \le 2_{31} - 1$ 。</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>这是一道很好的分块入门题。</p>
+<p>所谓分块，就是一种通过将一个序列分成多块后，在每块上打标记以实现快速区间修改，区间查询的一种算法。其均摊时间复杂度为$\Theta\sqrt{n}$。</p>
+<p>在一般情况下，每个块的长度都为$\sqrt{n}$。</p>
+<p>分块，被尊称为优雅的暴力，因此它的代码难度也不算高。总之，比线段树、树状数组等<del>毒瘤</del>数据结构的代码难度低。</p>
+<p>我们需要建立三个数组：</p>
+<ul>
+<li>$a[]$，为题目中输入的序列；</li>
+<li>$b[]$，记录每个序列中的每个数在那一块；</li>
+<li>$add$，为序列的标记数组。</li>
+</ul>
+<p>话不多说，上代码。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;//头文件准备</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用标准名字空间</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span><span class="comment">//快速读入</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>; <span class="keyword">char</span> c = getchar();</span><br><span class="line">	<span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>) &#123; <span class="keyword">if</span> (c == <span class="string">'-'</span>)f = <span class="number">-1</span>; c = getchar();&#125;</span><br><span class="line">	<span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>) &#123; x = x * <span class="number">10</span> + c - <span class="string">'0'</span>; c = getchar();&#125;</span><br><span class="line">	<span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">50005</span>], b[<span class="number">50005</span>], add[<span class="number">50005</span>], len, n, m;<span class="comment">//a[],b[],add[]的意思如分析，len为每一块的长度，n为序列长度，m为询问个数，在本题中=n。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x)</span><span class="comment">//区间修改的自定义函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt;= min(r, b[l] * len); i++) a[i] = a[i] + x;<span class="comment">//增加序列中的数</span></span><br><span class="line">	<span class="keyword">if</span> (b[l] != b[r])<span class="comment">//如果要修改的不在同一个块中</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = (b[r] - <span class="number">1</span>) * len + <span class="number">1</span>; i &lt;= r; i++) a[i] = a[i] + x;<span class="comment">//继续增加序列中的数</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = b[l] + <span class="number">1</span>; i &lt;= b[r] - <span class="number">1</span>; i++) add[i] = add[i] + x;<span class="comment">//给区间内的数增加标记</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">//进入主函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = gi();<span class="comment">//输入元素个数</span></span><br><span class="line">	len = <span class="built_in">sqrt</span>(n);<span class="comment">//求出每个块的长度</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) a[i] = gi();<span class="comment">//输入序列中的数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) b[i] = (i - <span class="number">1</span>) / len + <span class="number">1</span>;<span class="comment">//求出序列中的数分别属于哪一个块</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> p = <span class="number">1</span>; p &lt;= n; p++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> fl = gi(), l = gi(), r = gi(), w = gi();<span class="comment">//输入操作的描述</span></span><br><span class="line">		<span class="keyword">if</span> (!fl)<span class="comment">//如果是修改</span></span><br><span class="line">		&#123;</span><br><span class="line">			modify(l, r, w);<span class="comment">//修改区间内的数</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span><span class="comment">//否则就是求出某个数</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, a[r] + add[b[r]]);<span class="comment">//输出这个位置的数的标记和它在序列中原本的数的和</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//完美结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -556,7 +572,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://xslcj.github.io/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/" title="题解[CodeForces171C]A Piece of Cake">http://xslcj.github.io/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/</a>
+    <a href="http://xslcj.github.io/2019/05/14/题解-loj6277-数列分块入门1/" title="题解[loj6277]数列分块入门1">http://xslcj.github.io/2019/05/14/题解-loj6277-数列分块入门1/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -578,9 +594,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CodeForces题解/" rel="tag"># CodeForces题解</a>
+            <a href="/tags/loj/" rel="tag"># loj</a>
           
-            <a href="/tags/模拟/" rel="tag"># 模拟</a>
+            <a href="/tags/分块/" rel="tag"># 分块</a>
           
         </div>
       
@@ -593,8 +609,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/13/题解-CodeForces1154-A-Restoring-Three-Numbers/" rel="next" title="题解[CodeForces1154A]Restoring Three Numbers.md">
-                <i class="fa fa-chevron-left"></i> 题解[CodeForces1154A]Restoring Three Numbers.md
+              <a href="/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/" rel="next" title="题解[CodeForces171C]A Piece of Cake">
+                <i class="fa fa-chevron-left"></i> 题解[CodeForces171C]A Piece of Cake
               </a>
             
           </div>
@@ -602,10 +618,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/14/题解-loj6277-数列分块入门1/" rel="prev" title="题解[loj6277]数列分块入门1">
-                题解[loj6277]数列分块入门1 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -781,7 +793,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Examples"><span class="nav-number">4.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">5.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">6.</span> <span class="nav-text">Code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式"><span class="nav-number">2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式"><span class="nav-number">3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例"><span class="nav-number">4.</span> <span class="nav-text">样例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输入"><span class="nav-number">4.1.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输出"><span class="nav-number">4.2.</span> <span class="nav-text">样例输出</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围与提示"><span class="nav-number">5.</span> <span class="nav-text">数据范围与提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">6.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">7.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>
