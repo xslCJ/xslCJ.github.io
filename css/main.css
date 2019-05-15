@@ -1775,7 +1775,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1abe60;
+  background: #ff4083;
 }
 .feed-link,
 .chat {
@@ -3047,13 +3047,6 @@ img.img-topic {
   padding: 0;
   float: right;
   clear: right;
-}
-body {
-  background: url("http://img.netbian.com/file/2017/0326/64aab4ae3e632dbcbf9223995c654317.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
 }
 .post {
   margin-top: 60px;
