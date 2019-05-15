@@ -148,7 +148,7 @@
 <meta property="og:site_name" content="RainbowCloud的小屋">
 <meta property="og:description" content="题目描述给出一个长为$n$的数列，以及$n$个操作，操作涉及区间加法，单点查值。 输入格式第一行输入一个数字$n$。 第二行输入$n$个数字，第$i$个数字为$a_{i}$，以空格隔开。 接下来输入$n$行询问，每行输入四个数字$opt$、$l$、$r$、$c$，以空格隔开。 若$opt = 0$，表示将位于$[l, r]$的之间的数字都加$c$。 若$opt = 1$，表示询问$a_{r}$的值">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-14T14:48:14.416Z">
+<meta property="og:updated_time" content="2019-05-14T14:53:17.465Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解[loj6277]数列分块入门1">
 <meta name="twitter:description" content="题目描述给出一个长为$n$的数列，以及$n$个操作，操作涉及区间加法，单点查值。 输入格式第一行输入一个数字$n$。 第二行输入$n$个数字，第$i$个数字为$a_{i}$，以空格隔开。 接下来输入$n$行询问，每行输入四个数字$opt$、$l$、$r$、$c$，以空格隔开。 若$opt = 0$，表示将位于$[l, r]$的之间的数字都加$c$。 若$opt = 1$，表示询问$a_{r}$的值">
@@ -431,7 +431,7 @@
                 
               
 
-              <time title="创建时间：2019-05-14 22:05:43 / 修改时间：22:48:14" itemprop="dateCreated datePublished" datetime="2019-05-14T22:05:43+08:00">2019-05-14</time>
+              <time title="创建时间：2019-05-14 22:05:43 / 修改时间：22:53:17" itemprop="dateCreated datePublished" datetime="2019-05-14T22:05:43+08:00">2019-05-14</time>
             
 
             
@@ -535,7 +535,7 @@
 <ul>
 <li>$a[]$，为题目中输入的序列；</li>
 <li>$b[]$，记录每个序列中的每个数在那一块；</li>
-<li>$add$，为序列的标记数组。</li>
+<li>$add[]$，为序列的标记数组。</li>
 </ul>
 <p>话不多说，上代码。</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;//头文件准备</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用标准名字空间</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span><span class="comment">//快速读入</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>; <span class="keyword">char</span> c = getchar();</span><br><span class="line">	<span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>) &#123; <span class="keyword">if</span> (c == <span class="string">'-'</span>)f = <span class="number">-1</span>; c = getchar();&#125;</span><br><span class="line">	<span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>) &#123; x = x * <span class="number">10</span> + c - <span class="string">'0'</span>; c = getchar();&#125;</span><br><span class="line">	<span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">50005</span>], b[<span class="number">50005</span>], add[<span class="number">50005</span>], len, n, m;<span class="comment">//a[],b[],add[]的意思如分析，len为每一块的长度，n为序列长度，m为询问个数，在本题中=n。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x)</span><span class="comment">//区间修改的自定义函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt;= min(r, b[l] * len); i++) a[i] = a[i] + x;<span class="comment">//增加序列中的数</span></span><br><span class="line">	<span class="keyword">if</span> (b[l] != b[r])<span class="comment">//如果要修改的不在同一个块中</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = (b[r] - <span class="number">1</span>) * len + <span class="number">1</span>; i &lt;= r; i++) a[i] = a[i] + x;<span class="comment">//继续增加序列中的数</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = b[l] + <span class="number">1</span>; i &lt;= b[r] - <span class="number">1</span>; i++) add[i] = add[i] + x;<span class="comment">//给区间内的数增加标记</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">//进入主函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = gi();<span class="comment">//输入元素个数</span></span><br><span class="line">	len = <span class="built_in">sqrt</span>(n);<span class="comment">//求出每个块的长度</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) a[i] = gi();<span class="comment">//输入序列中的数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) b[i] = (i - <span class="number">1</span>) / len + <span class="number">1</span>;<span class="comment">//求出序列中的数分别属于哪一个块</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> p = <span class="number">1</span>; p &lt;= n; p++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> fl = gi(), l = gi(), r = gi(), w = gi();<span class="comment">//输入操作的描述</span></span><br><span class="line">		<span class="keyword">if</span> (!fl)<span class="comment">//如果是修改</span></span><br><span class="line">		&#123;</span><br><span class="line">			modify(l, r, w);<span class="comment">//修改区间内的数</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span><span class="comment">//否则就是求出某个数</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, a[r] + add[b[r]]);<span class="comment">//输出这个位置的数的标记和它在序列中原本的数的和</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//完美结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -619,6 +619,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/05/15/NOIP2016普及组解题报告/" rel="prev" title="NOIP2016普及组解题报告">
+                NOIP2016普及组解题报告 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -690,7 +694,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -715,7 +719,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -744,7 +750,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -821,7 +835,7 @@
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2.9k字</span>
+  <span class="post-count">博客全站共7.2k字</span>
 </div>
 <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
