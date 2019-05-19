@@ -473,11 +473,19 @@
                   
                 
               
-              目前共计 11 个标签
+                
+                  
+                
+              
+                
+                  
+                
+              
+              目前共计 13 个标签
             </div>
             <div class="tag-cloud-tags">
               
-                <a href="/tags/2016/" style="font-size: 12px; color: #ccc">2016</a> <a href="/tags/2018/" style="font-size: 12px; color: #ccc">2018</a> <a href="/tags/CodeForces题解/" style="font-size: 30px; color: #111">CodeForces题解</a> <a href="/tags/NOIP/" style="font-size: 30px; color: #111">NOIP</a> <a href="/tags/loj/" style="font-size: 12px; color: #ccc">loj</a> <a href="/tags/分块/" style="font-size: 12px; color: #ccc">分块</a> <a href="/tags/动态规划/" style="font-size: 12px; color: #ccc">动态规划</a> <a href="/tags/数论/" style="font-size: 12px; color: #ccc">数论</a> <a href="/tags/模拟/" style="font-size: 12px; color: #ccc">模拟</a> <a href="/tags/游记/" style="font-size: 12px; color: #ccc">游记</a> <a href="/tags/解题报告/" style="font-size: 12px; color: #ccc">解题报告</a>
+                <a href="/tags/2016/" style="font-size: 12px; color: #ccc">2016</a> <a href="/tags/2018/" style="font-size: 12px; color: #ccc">2018</a> <a href="/tags/CodeForces题解/" style="font-size: 30px; color: #111">CodeForces题解</a> <a href="/tags/NOIP/" style="font-size: 30px; color: #111">NOIP</a> <a href="/tags/UVA/" style="font-size: 12px; color: #ccc">UVA</a> <a href="/tags/loj/" style="font-size: 12px; color: #ccc">loj</a> <a href="/tags/分块/" style="font-size: 12px; color: #ccc">分块</a> <a href="/tags/动态规划/" style="font-size: 12px; color: #ccc">动态规划</a> <a href="/tags/数论/" style="font-size: 12px; color: #ccc">数论</a> <a href="/tags/树/" style="font-size: 12px; color: #ccc">树</a> <a href="/tags/模拟/" style="font-size: 12px; color: #ccc">模拟</a> <a href="/tags/游记/" style="font-size: 12px; color: #ccc">游记</a> <a href="/tags/解题报告/" style="font-size: 12px; color: #ccc">解题报告</a>
               
             </div>
           </div>
@@ -542,7 +550,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -569,7 +577,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -608,7 +618,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -668,7 +682,7 @@
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.2k字</span>
+  <span class="post-count">博客全站共8.7k字</span>
 </div>
 <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
@@ -702,7 +716,25 @@
   本站访客数:<span id="busuanzi_value_site_uv"></span>
 </span>
 </div>
-
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>  Sometimes your whole life boils down to one insame move.
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("13/05/2019 21:37:21");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>

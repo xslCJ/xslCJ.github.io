@@ -148,7 +148,7 @@
 <meta property="og:site_name" content="BrownBear的小屋">
 <meta property="og:description" content="动态规划基本概念动态规划（又称 $DP$，$Dynamic$ $Programming$）是一种将问题分阶段求解的算法。 其能够通过利用先前阶段的计算结果快速得到后续阶段的结果，大大减少不必要的重复计算。 状态的设计是解决动态规划问题的关键。 设计状态时，要考虑到状态是否能够转移、转移的效率、以及求出所有所需状态的总时间复杂度。 状态的规模以及状态转移方程的实现效率共同决定了动态规划的效率。 线性">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-18T14:59:36.145Z">
+<meta property="og:updated_time" content="2019-05-19T07:38:29.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态规划学习笔记">
 <meta name="twitter:description" content="动态规划基本概念动态规划（又称 $DP$，$Dynamic$ $Programming$）是一种将问题分阶段求解的算法。 其能够通过利用先前阶段的计算结果快速得到后续阶段的结果，大大减少不必要的重复计算。 状态的设计是解决动态规划问题的关键。 设计状态时，要考虑到状态是否能够转移、转移的效率、以及求出所有所需状态的总时间复杂度。 状态的规模以及状态转移方程的实现效率共同决定了动态规划的效率。 线性">
@@ -435,12 +435,24 @@
                 
               
 
-              <time title="创建时间：2019-05-18 22:45:28 / 修改时间：22:59:36" itemprop="dateCreated datePublished" datetime="2019-05-18T22:45:28+08:00">2019-05-18</time>
+              <time title="创建时间：2019-05-18 22:45:28" itemprop="dateCreated datePublished" datetime="2019-05-18T22:45:28+08:00">2019-05-18</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-19 15:38:29" itemprop="dateModified" datetime="2019-05-19T15:38:29+08:00">2019-05-19</time>
               
             
           </span>
@@ -457,14 +469,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/NOIP/" itemprop="url" rel="index"><span itemprop="name">NOIP</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/NOIP/解题报告/" itemprop="url" rel="index"><span itemprop="name">解题报告</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习笔记/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a></span>
 
                 
                 
@@ -525,7 +530,7 @@
 <p>状态的规模以及状态转移方程的实现效率共同决定了动态规划的效率。</p>
 <h2 id="线性DP"><a href="#线性DP" class="headerlink" title="线性DP"></a>线性DP</h2><p>线性 $DP$ 是在线性序列上进行 $DP$ 的一类问题。</p>
 <p>一些线性 $DP$ 其实等价于递推。</p>
-<h3 id="例题【洛谷-P1020-导弹拦截】"><a href="#例题【洛谷-P1020-导弹拦截】" class="headerlink" title="例题【洛谷$P1020$ 导弹拦截】"></a>例题【洛谷$P1020$ 导弹拦截】</h3><h4 id="100-分"><a href="#100-分" class="headerlink" title="$100$ 分"></a>$100$ 分</h4><p>第一问是求其最长不升子序列，第二问是求其最长上升子序列，本质相同，以第二问为例。</p>
+<h3 id="例题【洛谷P1020-导弹拦截】"><a href="#例题【洛谷P1020-导弹拦截】" class="headerlink" title="例题【洛谷P1020 导弹拦截】"></a>例题【洛谷P1020 导弹拦截】</h3><h4 id="100-分"><a href="#100-分" class="headerlink" title="$100$ 分"></a>$100$ 分</h4><p>第一问是求其最长不升子序列，第二问是求其最长上升子序列，本质相同，以第二问为例。</p>
 <p>令 $f[i]$ 表示以 $i$ 结尾的最长上升子序列。</p>
 <p>则 $f[i]$ = $max(f[j])$ $+$ $1$ ，其中 $j &lt; i$, $a[j] &lt; a[i]$ 。</p>
 <p>对于每个 $i$ 暴力枚举 $j 即可。</p>
@@ -539,17 +544,17 @@
 <p>那么我们可以二分，找到最大的满足限制的 $x$ ，则 $f[i]$ $= x + 1$ 。</p>
 <p>这样时间复杂度就被优化到了 $O(n log n)$。</p>
 <h2 id="区间DP"><a href="#区间DP" class="headerlink" title="区间DP"></a>区间DP</h2><p>区间 $DP$ 的思想是由小区间的状态合并得到大区间的状态。</p>
-<h3 id="例题：【洛谷-P4290-HAOI2008-玩具取名】"><a href="#例题：【洛谷-P4290-HAOI2008-玩具取名】" class="headerlink" title="例题：【洛谷$P4290 [HAOI2008]$ 玩具取名】"></a>例题：【洛谷$P4290 [HAOI2008]$ 玩具取名】</h3><p>令 $f[l][r][c]$ 表示名字的 $[l,r]$ 区间是否可以由 $c$ 字母变形而来。</p>
+<h3 id="例题：【洛谷P4290-HAOI2008-玩具取名】"><a href="#例题：【洛谷P4290-HAOI2008-玩具取名】" class="headerlink" title="例题：【洛谷P4290 [HAOI2008]玩具取名】"></a>例题：【洛谷P4290 [HAOI2008]玩具取名】</h3><p>令 $f[l][r][c]$ 表示名字的 $[l,r]$ 区间是否可以由 $c$ 字母变形而来。</p>
 <p>目标是求 $f[1][n][c]$ ，其中 $c ∈ {W, I, N, G}$ 。</p>
 <p>按区间长度从小到大的顺序进行 $dp$。对于 $f[l][r][c]$ ，枚举第一个字母（也就是 $c$ ）变形成的两个字母是什么，及分别对应 $[l,r]$ 中的哪些位置，即可利用之前的 $dp$ 信息求出。</p>
-<h2 id="树形DP"><a href="#树形DP" class="headerlink" title="树形DP"></a>树形DP</h2><h3 id="例题：【洛谷-P1352-没有上司的舞会】"><a href="#例题：【洛谷-P1352-没有上司的舞会】" class="headerlink" title="例题：【洛谷$P1352$ 没有上司的舞会】"></a>例题：【洛谷$P1352$ 没有上司的舞会】</h3><p>令 $dp[i][1]$ 表示以 $i$ 为根的子树中选取任意多互不相邻的点的最大权值。</p>
+<h2 id="树形DP"><a href="#树形DP" class="headerlink" title="树形DP"></a>树形DP</h2><h3 id="例题：【洛谷P1352-没有上司的舞会】"><a href="#例题：【洛谷P1352-没有上司的舞会】" class="headerlink" title="例题：【洛谷P1352 没有上司的舞会】"></a>例题：【洛谷P1352 没有上司的舞会】</h3><p>令 $dp[i][1]$ 表示以 $i$ 为根的子树中选取任意多互不相邻的点的最大权值。</p>
 <p>令 $dp[i][0]$ 表示以 $i$ 为根的子树中选取任意多互不相邻的点，且 $i$ 点本身不选的最大权值。</p>
 <p>则 $dp[i][0] =∑ dp[k][1]$ ，其中 $k$ 为 $i$ 的儿子。及 $dp[i][1] = max(dp[i][0],∑ dp[k][0] + v[i])$ ，其中 k 为 i 的儿子。</p>
 <p>假设根节点为 $x$ ，则答案为 $dp[x][1]$ 。</p>
 <h2 id="背包DP"><a href="#背包DP" class="headerlink" title="背包DP"></a>背包DP</h2><p>一类形如“有容量为 $S$ 的背包，有若干体积 $v[i]$ ，价值 $w[i]$ 的物品，求最大能拿的价值”的问题。</p>
 <p>有很多变式，如 $01$ 背包、完全背包、多重背包、有依赖的背包、分组背包等等。</p>
 <p>推荐阅读《背包九讲》。</p>
-<h2 id="数位DP"><a href="#数位DP" class="headerlink" title="数位DP"></a>数位DP</h2><h3 id="例题：【洛谷-P2602-ZJOI2010-数字计数】和【洛谷-P2657-SCOI2009-windy-数】"><a href="#例题：【洛谷-P2602-ZJOI2010-数字计数】和【洛谷-P2657-SCOI2009-windy-数】" class="headerlink" title="例题：【洛谷$P2602$ $[ZJOI2010]$ 数字计数】和【洛谷$P2657[SCOI2009]windy$ 数】"></a>例题：【洛谷$P2602$ $[ZJOI2010]$ 数字计数】和【洛谷$P2657[SCOI2009]windy$ 数】</h3><h2 id="状压DP"><a href="#状压DP" class="headerlink" title="状压DP"></a>状压DP</h2><h3 id="例题：【洛谷-P1896-SCOI2005-互不侵犯】和【洛谷-P2473-SCOI2008-奖励关】"><a href="#例题：【洛谷-P1896-SCOI2005-互不侵犯】和【洛谷-P2473-SCOI2008-奖励关】" class="headerlink" title="例题：【洛谷$P1896 [SCOI2005]$ 互不侵犯】和【洛谷$P2473 [SCOI2008]$ 奖励关】"></a>例题：【洛谷$P1896 [SCOI2005]$ 互不侵犯】和【洛谷$P2473 [SCOI2008]$ 奖励关】</h3><h2 id="插头DP"><a href="#插头DP" class="headerlink" title="插头DP"></a>插头DP</h2><p>基于连通性状态压缩的动态规划问题。</p>
+<h2 id="数位DP"><a href="#数位DP" class="headerlink" title="数位DP"></a>数位DP</h2><h3 id="例题：【洛谷P2602-ZJOI2010-数字计数】和【洛谷P2657-SCOI2009-windy数】"><a href="#例题：【洛谷P2602-ZJOI2010-数字计数】和【洛谷P2657-SCOI2009-windy数】" class="headerlink" title="例题：【洛谷P2602 [ZJOI2010]数字计数】和【洛谷P2657[SCOI2009]windy数】"></a>例题：【洛谷P2602 [ZJOI2010]数字计数】和【洛谷P2657[SCOI2009]windy数】</h3><h2 id="状压DP"><a href="#状压DP" class="headerlink" title="状压DP"></a>状压DP</h2><h3 id="例题：【洛谷P1896-SCOI2005-互不侵犯】和【洛谷P2473-SCOI2008-奖励关】"><a href="#例题：【洛谷P1896-SCOI2005-互不侵犯】和【洛谷P2473-SCOI2008-奖励关】" class="headerlink" title="例题：【洛谷P1896 [SCOI2005]互不侵犯】和【洛谷P2473 [SCOI2008]奖励关】"></a>例题：【洛谷P1896 [SCOI2005]互不侵犯】和【洛谷P2473 [SCOI2008]奖励关】</h3><h2 id="插头DP"><a href="#插头DP" class="headerlink" title="插头DP"></a>插头DP</h2><p>基于连通性状态压缩的动态规划问题。</p>
 <p>插头/轮廓线。</p>
 <p>详见陈丹琦论文。</p>
 <h2 id="bitset"><a href="#bitset" class="headerlink" title="bitset"></a>bitset</h2><p>$bitset$ 是 $STL$ 中的一种数据结构，能够储存一个长度为 $N$ 的二进制串，并且 $O(n/logn )$ 相互进行各种位运算。</p>
@@ -633,6 +638,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/05/19/题解-UVA839-天平-Not-so-Mobile/" rel="prev" title="题解[UVA839]天平 Not so Mobile">
+                题解[UVA839]天平 Not so Mobile <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -704,7 +713,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -731,7 +740,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -770,7 +781,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -823,7 +838,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#动态规划基本概念"><span class="nav-number">1.</span> <span class="nav-text">动态规划基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性DP"><span class="nav-number">2.</span> <span class="nav-text">线性DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题【洛谷-P1020-导弹拦截】"><span class="nav-number">2.1.</span> <span class="nav-text">例题【洛谷$P1020$ 导弹拦截】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#100-分"><span class="nav-number">2.1.1.</span> <span class="nav-text">$100$ 分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#200-分"><span class="nav-number">2.1.2.</span> <span class="nav-text">$200$ 分</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区间DP"><span class="nav-number">3.</span> <span class="nav-text">区间DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题：【洛谷-P4290-HAOI2008-玩具取名】"><span class="nav-number">3.1.</span> <span class="nav-text">例题：【洛谷$P4290 [HAOI2008]$ 玩具取名】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树形DP"><span class="nav-number">4.</span> <span class="nav-text">树形DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题：【洛谷-P1352-没有上司的舞会】"><span class="nav-number">4.1.</span> <span class="nav-text">例题：【洛谷$P1352$ 没有上司的舞会】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背包DP"><span class="nav-number">5.</span> <span class="nav-text">背包DP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数位DP"><span class="nav-number">6.</span> <span class="nav-text">数位DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题：【洛谷-P2602-ZJOI2010-数字计数】和【洛谷-P2657-SCOI2009-windy-数】"><span class="nav-number">6.1.</span> <span class="nav-text">例题：【洛谷$P2602$ $[ZJOI2010]$ 数字计数】和【洛谷$P2657[SCOI2009]windy$ 数】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状压DP"><span class="nav-number">7.</span> <span class="nav-text">状压DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题：【洛谷-P1896-SCOI2005-互不侵犯】和【洛谷-P2473-SCOI2008-奖励关】"><span class="nav-number">7.1.</span> <span class="nav-text">例题：【洛谷$P1896 [SCOI2005]$ 互不侵犯】和【洛谷$P2473 [SCOI2008]$ 奖励关】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插头DP"><span class="nav-number">8.</span> <span class="nav-text">插头DP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bitset"><span class="nav-number">9.</span> <span class="nav-text">bitset</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#动态规划基本概念"><span class="nav-number">1.</span> <span class="nav-text">动态规划基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性DP"><span class="nav-number">2.</span> <span class="nav-text">线性DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题【洛谷P1020-导弹拦截】"><span class="nav-number">2.1.</span> <span class="nav-text">例题【洛谷P1020 导弹拦截】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#100-分"><span class="nav-number">2.1.1.</span> <span class="nav-text">$100$ 分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#200-分"><span class="nav-number">2.1.2.</span> <span class="nav-text">$200$ 分</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区间DP"><span class="nav-number">3.</span> <span class="nav-text">区间DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题：【洛谷P4290-HAOI2008-玩具取名】"><span class="nav-number">3.1.</span> <span class="nav-text">例题：【洛谷P4290 [HAOI2008]玩具取名】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树形DP"><span class="nav-number">4.</span> <span class="nav-text">树形DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题：【洛谷P1352-没有上司的舞会】"><span class="nav-number">4.1.</span> <span class="nav-text">例题：【洛谷P1352 没有上司的舞会】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背包DP"><span class="nav-number">5.</span> <span class="nav-text">背包DP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数位DP"><span class="nav-number">6.</span> <span class="nav-text">数位DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题：【洛谷P2602-ZJOI2010-数字计数】和【洛谷P2657-SCOI2009-windy数】"><span class="nav-number">6.1.</span> <span class="nav-text">例题：【洛谷P2602 [ZJOI2010]数字计数】和【洛谷P2657[SCOI2009]windy数】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状压DP"><span class="nav-number">7.</span> <span class="nav-text">状压DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题：【洛谷P1896-SCOI2005-互不侵犯】和【洛谷P2473-SCOI2008-奖励关】"><span class="nav-number">7.1.</span> <span class="nav-text">例题：【洛谷P1896 [SCOI2005]互不侵犯】和【洛谷P2473 [SCOI2008]奖励关】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插头DP"><span class="nav-number">8.</span> <span class="nav-text">插头DP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bitset"><span class="nav-number">9.</span> <span class="nav-text">bitset</span></a></li></ol></div>
             
 
           </div>
@@ -847,7 +862,7 @@
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.2k字</span>
+  <span class="post-count">博客全站共8.7k字</span>
 </div>
 <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
@@ -881,7 +896,25 @@
   本站访客数:<span id="busuanzi_value_site_uv"></span>
 </span>
 </div>
-
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>  Sometimes your whole life boils down to one insame move.
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("13/05/2019 21:37:21");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
