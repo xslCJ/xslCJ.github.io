@@ -140,18 +140,18 @@
 
 
 
-  <meta name="description" content="题目描述给出一个长为$n$的数列，以及$n$个操作，操作涉及区间加法，单点查值。 输入格式第一行输入一个数字$n$。 第二行输入$n$个数字，第$i$个数字为$a_{i}$，以空格隔开。 接下来输入$n$行询问，每行输入四个数字$opt$、$l$、$r$、$c$，以空格隔开。 若$opt = 0$，表示将位于$[l, r]$的之间的数字都加$c$。 若$opt = 1$，表示询问$a_{r}$的值">
-<meta name="keywords" content="loj,分块">
+  <meta name="description" content="题目描述幻方是一种很神奇的 $N \times N$ 矩阵：它由数字 $1,2,3,\cdots \cdots ,N \times N$ 构成，且每行、每列及两条对角线上的数字之和都相同。 当 $N$ 为奇数时，我们可以通过下方法构建一个幻方： 首先将 $1$ 写在第一行的中间。 之后，按如下方式从小到大依次填写每个数 $K (K=2,3,\cdots,N \times N)$：  若 $(K-1">
+<meta name="keywords" content="NOIP,2015,模拟">
 <meta property="og:type" content="article">
-<meta property="og:title" content="题解[loj6277]数列分块入门1">
-<meta property="og:url" content="http://xslcj.github.io/2019/05/14/题解-loj6277-数列分块入门1/index.html">
+<meta property="og:title" content="题解[洛谷P2615][NOIP2015]神奇的幻方">
+<meta property="og:url" content="http://xslcj.github.io/2019/05/19/题解-洛谷P2615-NOIP2015-神奇的幻方/index.html">
 <meta property="og:site_name" content="BrownBear的小屋">
-<meta property="og:description" content="题目描述给出一个长为$n$的数列，以及$n$个操作，操作涉及区间加法，单点查值。 输入格式第一行输入一个数字$n$。 第二行输入$n$个数字，第$i$个数字为$a_{i}$，以空格隔开。 接下来输入$n$行询问，每行输入四个数字$opt$、$l$、$r$、$c$，以空格隔开。 若$opt = 0$，表示将位于$[l, r]$的之间的数字都加$c$。 若$opt = 1$，表示询问$a_{r}$的值">
+<meta property="og:description" content="题目描述幻方是一种很神奇的 $N \times N$ 矩阵：它由数字 $1,2,3,\cdots \cdots ,N \times N$ 构成，且每行、每列及两条对角线上的数字之和都相同。 当 $N$ 为奇数时，我们可以通过下方法构建一个幻方： 首先将 $1$ 写在第一行的中间。 之后，按如下方式从小到大依次填写每个数 $K (K=2,3,\cdots,N \times N)$：  若 $(K-1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-14T14:53:17.465Z">
+<meta property="og:updated_time" content="2019-05-19T09:53:51.467Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="题解[loj6277]数列分块入门1">
-<meta name="twitter:description" content="题目描述给出一个长为$n$的数列，以及$n$个操作，操作涉及区间加法，单点查值。 输入格式第一行输入一个数字$n$。 第二行输入$n$个数字，第$i$个数字为$a_{i}$，以空格隔开。 接下来输入$n$行询问，每行输入四个数字$opt$、$l$、$r$、$c$，以空格隔开。 若$opt = 0$，表示将位于$[l, r]$的之间的数字都加$c$。 若$opt = 1$，表示询问$a_{r}$的值">
+<meta name="twitter:title" content="题解[洛谷P2615][NOIP2015]神奇的幻方">
+<meta name="twitter:description" content="题目描述幻方是一种很神奇的 $N \times N$ 矩阵：它由数字 $1,2,3,\cdots \cdots ,N \times N$ 构成，且每行、每列及两条对角线上的数字之和都相同。 当 $N$ 为奇数时，我们可以通过下方法构建一个幻方： 首先将 $1$ 写在第一行的中间。 之后，按如下方式从小到大依次填写每个数 $K (K=2,3,\cdots,N \times N)$：  若 $(K-1">
 
 
 
@@ -159,7 +159,7 @@
 
   
   
-  <link rel="canonical" href="http://xslcj.github.io/2019/05/14/题解-loj6277-数列分块入门1/">
+  <link rel="canonical" href="http://xslcj.github.io/2019/05/19/题解-洛谷P2615-NOIP2015-神奇的幻方/">
 
 
 
@@ -169,7 +169,7 @@
   };
 </script>
 
-  <title>题解[loj6277]数列分块入门1 | BrownBear的小屋</title>
+  <title>题解[洛谷P2615][NOIP2015]神奇的幻方 | BrownBear的小屋</title>
   
 
 
@@ -392,7 +392,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xslcj.github.io/2019/05/14/题解-loj6277-数列分块入门1/">
+    <link itemprop="mainEntityOfPage" href="http://xslcj.github.io/2019/05/19/题解-洛谷P2615-NOIP2015-神奇的幻方/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BrownBear">
@@ -409,7 +409,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">题解[loj6277]数列分块入门1
+          <h1 class="post-title" itemprop="name headline">题解[洛谷P2615][NOIP2015]神奇的幻方
 
               
             
@@ -435,7 +435,7 @@
                 
               
 
-              <time title="创建时间：2019-05-14 22:05:43 / 修改时间：22:53:17" itemprop="dateCreated datePublished" datetime="2019-05-14T22:05:43+08:00">2019-05-14</time>
+              <time title="创建时间：2019-05-19 17:33:35 / 修改时间：17:53:51" itemprop="dateCreated datePublished" datetime="2019-05-19T17:33:35+08:00">2019-05-19</time>
             
 
             
@@ -476,8 +476,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/14/题解-loj6277-数列分块入门1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/14/题解-loj6277-数列分块入门1/" itemprop="commentCount"></span>
+                <a href="/2019/05/19/题解-洛谷P2615-NOIP2015-神奇的幻方/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/19/题解-洛谷P2615-NOIP2015-神奇的幻方/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -511,38 +511,32 @@
       
 
       
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给出一个长为$n$的数列，以及$n$个操作，操作涉及区间加法，单点查值。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行输入一个数字$n$。</p>
-<p>第二行输入$n$个数字，第$i$个数字为$a_{i}$，以空格隔开。</p>
-<p>接下来输入$n$行询问，每行输入四个数字$opt$、$l$、$r$、$c$，以空格隔开。</p>
-<p>若$opt = 0$，表示将位于$[l, r]$的之间的数字都加$c$。</p>
-<p>若$opt = 1$，表示询问$a_{r}$的值（$l$和$c$忽略）。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>对于每次询问，输出一行一个数字表示答案。</p>
-<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><blockquote>
-<p>4</p>
-<p>1 2 2 3</p>
-<p>0 1 3 1</p>
-<p>1 0 1 0</p>
-<p>0 1 2 2</p>
-<p>1 0 2 0</p>
-</blockquote>
-<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><blockquote>
-<p>2</p>
-<p>5</p>
-</blockquote>
-<h3 id="数据范围与提示"><a href="#数据范围与提示" class="headerlink" title="数据范围与提示"></a>数据范围与提示</h3><p>对于所有的数据，$1 \leq n \le 50000$ ，$-2^{31} \leq others、ans \le 2_{31} - 1$ 。</p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>这是一道很好的分块入门题。</p>
-<p>所谓分块，就是一种通过将一个序列分成多块后，在每块上打标记以实现快速区间修改，区间查询的一种算法。其均摊时间复杂度为$\Theta\sqrt{n}$。</p>
-<p>在一般情况下，每个块的长度都为$\sqrt{n}$。</p>
-<p>分块，被尊称为优雅的暴力，因此它的代码难度也不算高。总之，比线段树、树状数组等<del>毒瘤</del>数据结构的代码难度低。</p>
-<p>我们需要建立三个数组：</p>
-<ul>
-<li>$a[]$，为题目中输入的序列；</li>
-<li>$b[]$，记录每个序列中的每个数在那一块；</li>
-<li>$add[]$，为序列的标记数组。</li>
-</ul>
-<p>话不多说，上代码。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;//头文件准备</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用标准名字空间</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span><span class="comment">//快速读入</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>; <span class="keyword">char</span> c = getchar();</span><br><span class="line">	<span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>) &#123; <span class="keyword">if</span> (c == <span class="string">'-'</span>)f = <span class="number">-1</span>; c = getchar();&#125;</span><br><span class="line">	<span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>) &#123; x = x * <span class="number">10</span> + c - <span class="string">'0'</span>; c = getchar();&#125;</span><br><span class="line">	<span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">50005</span>], b[<span class="number">50005</span>], add[<span class="number">50005</span>], len, n, m;<span class="comment">//a[],b[],add[]的意思如分析，len为每一块的长度，n为序列长度，m为询问个数，在本题中=n。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x)</span><span class="comment">//区间修改的自定义函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt;= min(r, b[l] * len); i++) a[i] = a[i] + x;<span class="comment">//增加序列中的数</span></span><br><span class="line">	<span class="keyword">if</span> (b[l] != b[r])<span class="comment">//如果要修改的不在同一个块中</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = (b[r] - <span class="number">1</span>) * len + <span class="number">1</span>; i &lt;= r; i++) a[i] = a[i] + x;<span class="comment">//继续增加序列中的数</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = b[l] + <span class="number">1</span>; i &lt;= b[r] - <span class="number">1</span>; i++) add[i] = add[i] + x;<span class="comment">//给区间内的数增加标记</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">//进入主函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = gi();<span class="comment">//输入元素个数</span></span><br><span class="line">	len = <span class="built_in">sqrt</span>(n);<span class="comment">//求出每个块的长度</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) a[i] = gi();<span class="comment">//输入序列中的数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) b[i] = (i - <span class="number">1</span>) / len + <span class="number">1</span>;<span class="comment">//求出序列中的数分别属于哪一个块</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> p = <span class="number">1</span>; p &lt;= n; p++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> fl = gi(), l = gi(), r = gi(), w = gi();<span class="comment">//输入操作的描述</span></span><br><span class="line">		<span class="keyword">if</span> (!fl)<span class="comment">//如果是修改</span></span><br><span class="line">		&#123;</span><br><span class="line">			modify(l, r, w);<span class="comment">//修改区间内的数</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span><span class="comment">//否则就是求出某个数</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, a[r] + add[b[r]]);<span class="comment">//输出这个位置的数的标记和它在序列中原本的数的和</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//完美结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>幻方是一种很神奇的 $N \times N$ 矩阵：它由数字 $1,2,3,\cdots \cdots ,N \times N$ 构成，且每行、每列及两条对角线上的数字之和都相同。</p>
+<p>当 $N$ 为奇数时，我们可以通过下方法构建一个幻方：</p>
+<p>首先将 $1$ 写在第一行的中间。</p>
+<p>之后，按如下方式从小到大依次填写每个数 $K (K=2,3,\cdots,N \times N)$：</p>
+<ol>
+<li>若 $(K-1)$ 在第一行但不在最后一列，则将 $K$ 填在最后一行， $(K-1)$ 所在列的右一列；</li>
+<li>若 $(K-1)$ 在最后一列但不在第一行，则将 $K$ 填在第一列， $(K-1)$ 所在行的上一行；</li>
+<li>若 $(K-1)$ 在第一行最后一列，则将 $K$ 填在 $(K-1)$ 的正下方；</li>
+<li>若 $(K-1)$ 既不在第一行，也最后一列，如果 $(K-1)$ 的右上方还未填数，则将 $K$ 填在 $(K-1)$ 的右上方，否则将 $L$ 填在 $(K-1)$ 的正下方。</li>
+</ol>
+<p>现给定 $N$ ，请按上述方法构造 $N \times N$ 的幻方。</p>
+<h3 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h3><h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>一个正整数 $N$ ，即幻方的大小。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>共 $N$ 行 ，每行 $N$ 个整数，即按上述方法构造出的 $N \times N$ 的幻方，相邻两个整数之间用单空格隔开。</p>
+<h3 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h3><h4 id="样例1"><a href="#样例1" class="headerlink" title="样例1"></a>样例1</h4><h5 id="输入样例1"><a href="#输入样例1" class="headerlink" title="输入样例1"></a>输入样例1</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+<h5 id="输出样例1"><a href="#输出样例1" class="headerlink" title="输出样例1"></a>输出样例1</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">8 1 6</span><br><span class="line">3 5 7</span><br><span class="line">4 9 2</span><br></pre></td></tr></table></figure>
+<h4 id="样例2"><a href="#样例2" class="headerlink" title="样例2"></a>样例2</h4><h5 id="输入样例2"><a href="#输入样例2" class="headerlink" title="输入样例2"></a>输入样例2</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">25</span><br></pre></td></tr></table></figure>
+<h5 id="输出样例2"><a href="#输出样例2" class="headerlink" title="输出样例2"></a>输出样例2</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">327 354 381 408 435 462 489 516 543 570 597 624 1 28 55 82 109 136 163 190 217 244 271 298 325</span><br><span class="line">353 380 407 434 461 488 515 542 569 596 623 25 27 54 81 108 135 162 189 216 243 270 297 324 326</span><br><span class="line">379 406 433 460 487 514 541 568 595 622 24 26 53 80 107 134 161 188 215 242 269 296 323 350 352</span><br><span class="line">405 432 459 486 513 540 567 594 621 23 50 52 79 106 133 160 187 214 241 268 295 322 349 351 378</span><br><span class="line">431 458 485 512 539 566 593 620 22 49 51 78 105 132 159 186 213 240 267 294 321 348 375 377 404</span><br><span class="line">457 484 511 538 565 592 619 21 48 75 77 104 131 158 185 212 239 266 293 320 347 374 376 403 430</span><br><span class="line">483 510 537 564 591 618 20 47 74 76 103 130 157 184 211 238 265 292 319 346 373 400 402 429 456</span><br><span class="line">509 536 563 590 617 19 46 73 100 102 129 156 183 210 237 264 291 318 345 372 399 401 428 455 482</span><br><span class="line">535 562 589 616 18 45 72 99 101 128 155 182 209 236 263 290 317 344 371 398 425 427 454 481 508</span><br><span class="line">561 588 615 17 44 71 98 125 127 154 181 208 235 262 289 316 343 370 397 424 426 453 480 507 534</span><br><span class="line">587 614 16 43 70 97 124 126 153 180 207 234 261 288 315 342 369 396 423 450 452 479 506 533 560</span><br><span class="line">613 15 42 69 96 123 150 152 179 206 233 260 287 314 341 368 395 422 449 451 478 505 532 559 586</span><br><span class="line">14 41 68 95 122 149 151 178 205 232 259 286 313 340 367 394 421 448 475 477 504 531 558 585 612</span><br><span class="line">40 67 94 121 148 175 177 204 231 258 285 312 339 366 393 420 447 474 476 503 530 557 584 611 13</span><br><span class="line">66 93 120 147 174 176 203 230 257 284 311 338 365 392 419 446 473 500 502 529 556 583 610 12 39</span><br><span class="line">92 119 146 173 200 202 229 256 283 310 337 364 391 418 445 472 499 501 528 555 582 609 11 38 65</span><br><span class="line">118 145 172 199 201 228 255 282 309 336 363 390 417 444 471 498 525 527 554 581 608 10 37 64 91</span><br><span class="line">144 171 198 225 227 254 281 308 335 362 389 416 443 470 497 524 526 553 580 607 9 36 63 90 117</span><br><span class="line">170 197 224 226 253 280 307 334 361 388 415 442 469 496 523 550 552 579 606 8 35 62 89 116 143</span><br><span class="line">196 223 250 252 279 306 333 360 387 414 441 468 495 522 549 551 578 605 7 34 61 88 115 142 169</span><br><span class="line">222 249 251 278 305 332 359 386 413 440 467 494 521 548 575 577 604 6 33 60 87 114 141 168 195</span><br><span class="line">248 275 277 304 331 358 385 412 439 466 493 520 547 574 576 603 5 32 59 86 113 140 167 194 221</span><br><span class="line">274 276 303 330 357 384 411 438 465 492 519 546 573 600 602 4 31 58 85 112 139 166 193 220 247</span><br><span class="line">300 302 329 356 383 410 437 464 491 518 545 572 599 601 3 30 57 84 111 138 165 192 219 246 273</span><br><span class="line">301 328 355 382 409 436 463 490 517 544 571 598 625 2 29 56 83 110 137 164 191 218 245 272 299</span><br></pre></td></tr></table></figure>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>对于$100\%$的数据，对于全部数据， $1 \leq N \leq 39$ 且 $N$ 为奇数。</p>
+<p>$NOIP2015$ 提高组 $Day1T1$</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>按照题意模拟即可，没有什么思维难度，只是要注意一点细节。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```cpp</p>
+<h1 id="include"><a href="#include" class="headerlink" title="include "></a>include <bits stdc++.h></bits></h1><p>using namespace std;</p>
+<p>inline int gi()<br>{<br>    int f = 1, x = 0; char c = getchar();<br>    while (c &lt; ‘0’ || c &gt; ‘9’)<br>    {<br>        if (c == ‘-‘)<br>            f = -1;<br>        c = getchar();<br>    }<br>    while (c &gt;= ‘0’ &amp;&amp; c &lt;= ‘9’)<br>    {<br>        x = x <em> 10 + c - ‘0’;<br>        c = getchar();<br>    }<br>    return f </em> x;<br>}</p>
+<p>struct Node<br>{<br>    int h, l;<br>} b[1603];//表示每个数的行列<br>int n, a[40][40];//a[i][j]表示第i行第j列的数</p>
+<p>int main()<br>{<br>    n = gi();//输入幻方的大小<br>    a[1][(n + 1) &gt;&gt; 1] = 1;//填好最中间的数<br>    b[1].h = 1, b[1].l = (n + 1) &gt;&gt; 1;//把1的行列确定下来<br>    for (register int i = 2; i &lt;= n * n; i++)//依次填每一个数<br>    {<br>        if (b[i - 1].h == 1 &amp;&amp; b[i - 1].l != n)//在第1行且不在第n列<br>        {<br>            b[i].h = n, b[i].l = b[i - 1].l + 1;<br>            a[b[i].h][b[i].l] = i;<br>        }<br>        else if (b[i - 1].h != 1 &amp;&amp; b[i - 1].l == n)//在第n列且不在第1行<br>        {<br>            b[i].l = 1, b[i].h = b[i - 1].h - 1;<br>            a[b[i].h][b[i].l] = i;<br>        }<br>        else if (b[i - 1].h == 1 &amp;&amp; b[i - 1].l == n)//在第1行第n列<br>        {<br>            b[i].h = b[i - 1].h + 1, b[i].l = n;<br>            a[b[i].h][b[i].l] = i;<br>        }<br>        else if (b[i - 1].h != 1 &amp;&amp; b[i - 1].l != n)//不在第1行且不在第n列<br>        {<br>            if (a[b[i - 1].h - 1][b[i - 1].l + 1] == 0)//如果当前位置还没有数<br>            {<br>                b[i].h = b[i - 1].h - 1, b[i].l = b[i - 1].l + 1;<br>                a[b[i].h][b[i].l] = i;<br>            }<br>            else//当前位置有数<br>            {<br>                b[i].h = b[i - 1].h + 1, b[i].l = b[i - 1].l;<br>                a[b[i].h][b[i].l] = i;<br>            }<br>        }<br>    }<br>    //按顺序输出<br>    for (register int i = 1; i &lt;= n; i++)<br>    {<br>        for (register int j = 1; j &lt;= n; j++)<br>        {<br>            printf(“%d “, a[i][j]);<br>        }<br>        puts(“”);//记得换行<br>    }<br>    return 0;//结束<br>}</p>
+
       
     </div>
 
@@ -576,7 +570,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://xslcj.github.io/2019/05/14/题解-loj6277-数列分块入门1/" title="题解[loj6277]数列分块入门1">http://xslcj.github.io/2019/05/14/题解-loj6277-数列分块入门1/</a>
+    <a href="http://xslcj.github.io/2019/05/19/题解-洛谷P2615-NOIP2015-神奇的幻方/" title="题解[洛谷P2615][NOIP2015]神奇的幻方">http://xslcj.github.io/2019/05/19/题解-洛谷P2615-NOIP2015-神奇的幻方/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -598,9 +592,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/loj/" rel="tag"># loj</a>
+            <a href="/tags/NOIP/" rel="tag"># NOIP</a>
           
-            <a href="/tags/分块/" rel="tag"># 分块</a>
+            <a href="/tags/2015/" rel="tag"># 2015</a>
+          
+            <a href="/tags/模拟/" rel="tag"># 模拟</a>
           
         </div>
       
@@ -613,8 +609,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/" rel="next" title="题解[CodeForces171C]A Piece of Cake">
-                <i class="fa fa-chevron-left"></i> 题解[CodeForces171C]A Piece of Cake
+              <a href="/2019/05/19/题解-UVA839-天平-Not-so-Mobile/" rel="next" title="题解[UVA839]天平 Not so Mobile">
+                <i class="fa fa-chevron-left"></i> 题解[UVA839]天平 Not so Mobile
               </a>
             
           </div>
@@ -622,10 +618,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/15/NOIP2016普及组解题报告/" rel="prev" title="NOIP2016普及组解题报告">
-                NOIP2016普及组解题报告 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -825,7 +817,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式"><span class="nav-number">2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式"><span class="nav-number">3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例"><span class="nav-number">4.</span> <span class="nav-text">样例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输入"><span class="nav-number">4.1.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输出"><span class="nav-number">4.2.</span> <span class="nav-text">样例输出</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围与提示"><span class="nav-number">5.</span> <span class="nav-text">数据范围与提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">6.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">7.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入输出格式"><span class="nav-number">2.</span> <span class="nav-text">输入输出格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输入格式"><span class="nav-number">2.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式"><span class="nav-number">2.2.</span> <span class="nav-text">输出格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入输出样例"><span class="nav-number">3.</span> <span class="nav-text">输入输出样例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#样例1"><span class="nav-number">3.1.</span> <span class="nav-text">样例1</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#输入样例1"><span class="nav-number">3.1.1.</span> <span class="nav-text">输入样例1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#输出样例1"><span class="nav-number">3.1.2.</span> <span class="nav-text">输出样例1</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例2"><span class="nav-number">3.2.</span> <span class="nav-text">样例2</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#输入样例2"><span class="nav-number">3.2.1.</span> <span class="nav-text">输入样例2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#输出样例2"><span class="nav-number">3.2.2.</span> <span class="nav-text">输出样例2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明"><span class="nav-number">4.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">5.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">6.</span> <span class="nav-text">代码</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#include"><span class="nav-number"></span> <span class="nav-text">include </span></a></li></div>
             
 
           </div>
