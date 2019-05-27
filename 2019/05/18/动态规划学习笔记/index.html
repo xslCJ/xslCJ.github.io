@@ -1,0 +1,1058 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      动态规划学习笔记 | BrownBear的小屋
+    
+  </title>
+  <meta name="author" content="BrownBear">
+  <meta name="keywords" content>
+  <meta name="description" content="愿你出走半生，归来仍是少年">
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
+  
+  <!-- jquery -->
+	<script src="/js/jquery.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="transition">
+					<div class="three-bounce1"></div>
+					<div class="three-bounce2"></div>
+					<div class="three-bounce3"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="normal" data-normal-src="https://source.unsplash.com/collection/954550/1920x1080" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<style type="text/css">
+	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		right: 1rem;
+		writing-mode: tb-rl;
+	}	
+	
+	.header-date a {
+		border-bottom: none;
+	}
+
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			font-size: 1rem;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			当前文章&nbsp;:&nbsp;《动态规划学习笔记》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	<a href="/2019/05/18/动态规划学习笔记/" itemprop="url">
+		动态规划学习笔记
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	发布于
+
+	<a href="/2019/05/18/动态规划学习笔记/" itemprop="url">
+		<time datetime="2019-05-18T14:45:28.000Z" itemprop="datePublished">
+	  		2019-05-18
+	  </time>
+	</a>
+	&nbsp;
+
+
+
+
+
+			
+
+
+
+
+	更新于
+
+	<a href="/2019/05/18/动态规划学习笔记/" itemprop="url">
+		<time datetime="2019-05-18T14:45:28.000Z" itemprop="dateUpdated">
+	  		2019-05-19
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+			
+	
+		<a href="/tags/动态规划/" class=" ">
+			动态规划
+		</a>
+	
+		
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<h2 id="动态规划基本概念"><a href="#动态规划基本概念" class="headerlink" title="动态规划基本概念"></a>动态规划基本概念</h2><p>动态规划（又称 $DP$，$Dynamic$ $Programming$）是一种将问题分阶段求解的算法。</p>
+<p>其能够通过利用先前阶段的计算结果快速得到后续阶段的结果，大大减少不必要的重复计算。</p>
+<p>状态的设计是解决动态规划问题的关键。</p>
+<p>设计状态时，要考虑到状态是否能够转移、转移的效率、以及求出所有所需状态的总时间复杂度。</p>
+<p>状态的规模以及状态转移方程的实现效率共同决定了动态规划的效率。</p>
+<h2 id="线性DP"><a href="#线性DP" class="headerlink" title="线性DP"></a>线性DP</h2><p>线性 $DP$ 是在线性序列上进行 $DP$ 的一类问题。</p>
+<p>一些线性 $DP$ 其实等价于递推。</p>
+<h3 id="例题【洛谷P1020-导弹拦截】"><a href="#例题【洛谷P1020-导弹拦截】" class="headerlink" title="例题【洛谷P1020 导弹拦截】"></a>例题【洛谷P1020 导弹拦截】</h3><h4 id="100-分"><a href="#100-分" class="headerlink" title="$100$ 分"></a>$100$ 分</h4><p>第一问是求其最长不升子序列，第二问是求其最长上升子序列，本质相同，以第二问为例。</p>
+<p>令 $f[i]$ 表示以 $i$ 结尾的最长上升子序列。</p>
+<p>则 $f[i]$ = $max(f[j])$ $+$ $1$ ，其中 $j &lt; i$, $a[j] &lt; a[i]$ 。</p>
+<p>对于每个 $i$ 暴力枚举 $j 即可。</p>
+<p>答案为所有 $f$ 的最大值。</p>
+<p>时间复杂度 $O(n^2)$。</p>
+<h4 id="200-分"><a href="#200-分" class="headerlink" title="$200$ 分"></a>$200$ 分</h4><p>考虑优化上述转移过程。</p>
+<p>对于每个 $i$ ，需要查询最大的 $f[j]$ ，满足 $a[j]$ $&lt;$ $a[i]$ 。</p>
+<p>$f[j]$ 的值域为 $[1, n − 1]$ 。</p>
+<p>我们可以记录 $d[x]$ 表示 $f$ 值为 $x$ 的最小 $a[j]$ 。</p>
+<p>那么显然 $d$ 值是单调不下降的（反证法，若存在 $d[k+1] &lt; d[k]$ ，则 $d[k+1]$所对应的长度为 $k + 1$ 的上升子序列的第 $k$ 个数 &lt; $d[k+1] &lt; d[k]$ ，即 $d[k]$应被更新）。</p>
+<p>那么我们可以二分，找到最大的满足限制的 $x$ ，则 $f[i]$ $= x + 1$ 。</p>
+<p>这样时间复杂度就被优化到了 $O(n log n)$。</p>
+<h2 id="区间DP"><a href="#区间DP" class="headerlink" title="区间DP"></a>区间DP</h2><p>区间 $DP$ 的思想是由小区间的状态合并得到大区间的状态。</p>
+<h3 id="例题：【洛谷P4290-HAOI2008-玩具取名】"><a href="#例题：【洛谷P4290-HAOI2008-玩具取名】" class="headerlink" title="例题：【洛谷P4290 [HAOI2008]玩具取名】"></a>例题：【洛谷P4290 [HAOI2008]玩具取名】</h3><p>令 $f[l][r][c]$ 表示名字的 $[l,r]$ 区间是否可以由 $c$ 字母变形而来。</p>
+<p>目标是求 $f[1][n][c]$ ，其中 $c ∈ {W, I, N, G}$ 。</p>
+<p>按区间长度从小到大的顺序进行 $dp$。对于 $f[l][r][c]$ ，枚举第一个字母（也就是 $c$ ）变形成的两个字母是什么，及分别对应 $[l,r]$ 中的哪些位置，即可利用之前的 $dp$ 信息求出。</p>
+<h2 id="树形DP"><a href="#树形DP" class="headerlink" title="树形DP"></a>树形DP</h2><h3 id="例题：【洛谷P1352-没有上司的舞会】"><a href="#例题：【洛谷P1352-没有上司的舞会】" class="headerlink" title="例题：【洛谷P1352 没有上司的舞会】"></a>例题：【洛谷P1352 没有上司的舞会】</h3><p>令 $dp[i][1]$ 表示以 $i$ 为根的子树中选取任意多互不相邻的点的最大权值。</p>
+<p>令 $dp[i][0]$ 表示以 $i$ 为根的子树中选取任意多互不相邻的点，且 $i$ 点本身不选的最大权值。</p>
+<p>则 $dp[i][0] =∑ dp[k][1]$ ，其中 $k$ 为 $i$ 的儿子。及 $dp[i][1] = max(dp[i][0],∑ dp[k][0] + v[i])$ ，其中 k 为 i 的儿子。</p>
+<p>假设根节点为 $x$ ，则答案为 $dp[x][1]$ 。</p>
+<h2 id="背包DP"><a href="#背包DP" class="headerlink" title="背包DP"></a>背包DP</h2><p>一类形如“有容量为 $S$ 的背包，有若干体积 $v[i]$ ，价值 $w[i]$ 的物品，求最大能拿的价值”的问题。</p>
+<p>有很多变式，如 $01$ 背包、完全背包、多重背包、有依赖的背包、分组背包等等。</p>
+<p>推荐阅读《背包九讲》。</p>
+<h2 id="数位DP"><a href="#数位DP" class="headerlink" title="数位DP"></a>数位DP</h2><h3 id="例题：【洛谷P2602-ZJOI2010-数字计数】和【洛谷P2657-SCOI2009-windy数】"><a href="#例题：【洛谷P2602-ZJOI2010-数字计数】和【洛谷P2657-SCOI2009-windy数】" class="headerlink" title="例题：【洛谷P2602 [ZJOI2010]数字计数】和【洛谷P2657[SCOI2009]windy数】"></a>例题：【洛谷P2602 [ZJOI2010]数字计数】和【洛谷P2657[SCOI2009]windy数】</h3><h2 id="状压DP"><a href="#状压DP" class="headerlink" title="状压DP"></a>状压DP</h2><h3 id="例题：【洛谷P1896-SCOI2005-互不侵犯】和【洛谷P2473-SCOI2008-奖励关】"><a href="#例题：【洛谷P1896-SCOI2005-互不侵犯】和【洛谷P2473-SCOI2008-奖励关】" class="headerlink" title="例题：【洛谷P1896 [SCOI2005]互不侵犯】和【洛谷P2473 [SCOI2008]奖励关】"></a>例题：【洛谷P1896 [SCOI2005]互不侵犯】和【洛谷P2473 [SCOI2008]奖励关】</h3><h2 id="插头DP"><a href="#插头DP" class="headerlink" title="插头DP"></a>插头DP</h2><p>基于连通性状态压缩的动态规划问题。</p>
+<p>插头/轮廓线。</p>
+<p>详见陈丹琦论文。</p>
+<h2 id="bitset"><a href="#bitset" class="headerlink" title="bitset"></a>bitset</h2><p>$bitset$ 是 $STL$ 中的一种数据结构，能够储存一个长度为 $N$ 的二进制串，并且 $O(n/logn )$ 相互进行各种位运算。</p>
+<p>详见 <a href="http://blog.xlightgod.cf/cf781daxel-and-marston-in-bitland/" target="_blank" rel="noopener">这里</a></p>
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相关文章</div>
+				<div>评论</div>
+				<div>分享</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+			<a href="/2019/05/19/题解-UVA839-天平-Not-so-Mobile/" title="题解[UVA839]天平 Not so Mobile" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/2019/05/15/NOIP2016普及组解题报告/" title="NOIP2016普及组解题报告" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/20/题解-洛谷P3078-USACO13MAR-扑克牌型Poker-Hands/" title="题解[洛谷P3078][USACO13MAR]扑克牌型Poker Hands">
+								题解[洛谷P3078][USACO13MAR]扑克牌型Poker Hands			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 20日, 2019				
+							</p>
+							<p class="relate-post-content">
+								题目描述Bessie and her friends are playing a unique version of poker involving a deck with $N (1 &lt;= N &lt;= 100,000)$ ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/20/题解-洛谷P3078-USACO13MAR-扑克牌型Poker-Hands/" title="题解[洛谷P3078][USACO13MAR]扑克牌型Poker Hands">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[洛谷P3078][USACO13MAR]扑克牌型Poker Hands">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/20/题解-洛谷P1969-NOIP2013-积木大赛/" title="题解[洛谷P1969][NOIP2013]积木大赛">
+								题解[洛谷P1969][NOIP2013]积木大赛			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 20日, 2019				
+							</p>
+							<p class="relate-post-content">
+								题目描述春春幼儿园举办了一年一度的“积木大赛”。今年比赛的内容是搭建一座宽度为$n$的大厦，大厦可以看成由$n$块宽度为$1$的积木组成，第i块积木的最终高度需要是$h_i$​。
+在搭建开始之前，没有任何积木（可以看成$n$块高度为$...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/20/题解-洛谷P1969-NOIP2013-积木大赛/" title="题解[洛谷P1969][NOIP2013]积木大赛">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[洛谷P1969][NOIP2013]积木大赛">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/20/题解-洛谷P5019-NOIP2018-铺设道路/" title="题解[洛谷P5019][NOIP2018]铺设道路">
+								题解[洛谷P5019][NOIP2018]铺设道路			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 20日, 2019				
+							</p>
+							<p class="relate-post-content">
+								题目描述春春是一名道路工程师，负责铺设一条长度为 $n$ 的道路。
+铺设道路的主要工作是填平下陷的地表。整段道路可以看作是 $n$ 块首尾相连的区域，一开始，第 $i$ 块区域下陷的深度为 $d_i$​ 。
+春春每天可以选择一段连续区...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/20/题解-洛谷P5019-NOIP2018-铺设道路/" title="题解[洛谷P5019][NOIP2018]铺设道路">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[洛谷P5019][NOIP2018]铺设道路">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/19/题解-洛谷P2615-NOIP2015-神奇的幻方/" title="题解[洛谷P2615][NOIP2015]神奇的幻方">
+								题解[洛谷P2615][NOIP2015]神奇的幻方			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 19日, 2019				
+							</p>
+							<p class="relate-post-content">
+								题目描述幻方是一种很神奇的 $N \times N$ 矩阵：它由数字 $1,2,3,\cdots \cdots ,N \times N$ 构成，且每行、每列及两条对角线上的数字之和都相同。
+当 $N$ 为奇数时，我们可以通过下方法构建...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/19/题解-洛谷P2615-NOIP2015-神奇的幻方/" title="题解[洛谷P2615][NOIP2015]神奇的幻方">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[洛谷P2615][NOIP2015]神奇的幻方">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/19/题解-UVA839-天平-Not-so-Mobile/" title="题解[UVA839]天平 Not so Mobile">
+								题解[UVA839]天平 Not so Mobile			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 19日, 2019				
+							</p>
+							<p class="relate-post-content">
+								Description
+Input
+Output
+ExamplesInput12345610 2 0 40 3 0 11 1 1 12 4 4 21 6 3 2
+Output1YES
+Translation输入一个树状天平，根据力矩相...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/19/题解-UVA839-天平-Not-so-Mobile/" title="题解[UVA839]天平 Not so Mobile">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[UVA839]天平 Not so Mobile">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/15/NOIP2016普及组解题报告/" title="NOIP2016普及组解题报告">
+								NOIP2016普及组解题报告			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 15日, 2019				
+							</p>
+							<p class="relate-post-content">
+								概述$NOIP2016$普及组的前三题都比较简单，第四题也有很多的暴力分，相信参加了的各位$OIer$在$2016$年都取得了很好的成绩。
+那么，我将会分析$NOIP2016$普及组的四道题目，希望对各位的$OI$学习有所帮助！
+T1...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/15/NOIP2016普及组解题报告/" title="NOIP2016普及组解题报告">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="NOIP2016普及组解题报告">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/14/题解-loj6277-数列分块入门1/" title="题解[loj6277]数列分块入门1">
+								题解[loj6277]数列分块入门1			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 14日, 2019				
+							</p>
+							<p class="relate-post-content">
+								题目描述给出一个长为$n$的数列，以及$n$个操作，操作涉及区间加法，单点查值。
+输入格式第一行输入一个数字$n$。
+第二行输入$n$个数字，第$i$个数字为$a_{i}$，以空格隔开。
+接下来输入$n$行询问，每行输入四个数字$op...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/14/题解-loj6277-数列分块入门1/" title="题解[loj6277]数列分块入门1">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[loj6277]数列分块入门1">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/" title="题解[CodeForces171C]A Piece of Cake">
+								题解[CodeForces171C]A Piece of Cake			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 13日, 2019				
+							</p>
+							<p class="relate-post-content">
+								Description给你$n$个数，求出$\sum_{i=1}^{n} a_{i}\times i\qquad$
+Input共$n + 1$个数，分别为$n$和$n$个数$a_{i}$($1$$\leq i \le n$)。
+Out...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/" title="题解[CodeForces171C]A Piece of Cake">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[CodeForces171C]A Piece of Cake">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/13/题解-CodeForces1154-A-Restoring-Three-Numbers/" title="题解[CodeForces1154A]Restoring Three Numbers.md">
+								题解[CodeForces1154A]Restoring Three Numbers.md			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 13日, 2019				
+							</p>
+							<p class="relate-post-content">
+								DescriptionPolycarp has guessed three positive integers $a$, $b$ and $c$. He keeps these numbers in secret, but he wr...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/13/题解-CodeForces1154-A-Restoring-Three-Numbers/" title="题解[CodeForces1154A]Restoring Three Numbers.md">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[CodeForces1154A]Restoring Three Numbers.md">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/12/NOIP2018游记/" title="NOIP2018游记">
+								NOIP2018游记			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 12日, 2019				
+							</p>
+							<p class="relate-post-content">
+								我很荣幸能够参加NOIP2018！
+感谢指导老师多年来的指导，也要感谢CCF的组织！
+11月10日下午1:30我顺利地到达了长沙理工大学云塘新校区
+准备参加NOIP2018普及组的比赛。
+进入大厅就碰见了cjy一行人（他肯定比我666...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/12/NOIP2018游记/" title="NOIP2018游记">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="NOIP2018游记">
+							</a>
+						</div>
+					</li>											
+			
+			
+		</ul>
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+
+<!-- show math formula -->
+
+	<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config(
+			{ 
+				tex2jax: {
+					inlineMath: [['$','$'], ['\\(','\\)']]
+				} 
+			}
+		);
+	</script>
+
+
+
+	 
+	<script src="/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2019, content by BrownBear. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup">
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/plugin/search/search.js"></script>
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+<!-- love effect -->
+
+	<script src="/plugin/love/love.js"></script>
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>
