@@ -320,7 +320,7 @@
 
 	<a href="/2019/05/19/题解-洛谷P2615-NOIP2015-神奇的幻方/" itemprop="url">
 		<time datetime="2019-05-19T09:33:35.000Z" itemprop="dateUpdated">
-	  		2019-05-19
+	  		2019-05-27
 	  </time>
 	</a> 
 
@@ -335,12 +335,12 @@
 			NOIP
 		</a>
 	
-		<a href="/tags/模拟/" class=" ">
-			模拟
-		</a>
-	
 		<a href="/tags/2015/" class=" ">
 			2015
+		</a>
+	
+		<a href="/tags/模拟/" class=" ">
+			模拟
 		</a>
 	
 		
@@ -376,7 +376,7 @@
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>; <span class="keyword">char</span> c = getchar();</span><br><span class="line">    <span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'-'</span>)</span><br><span class="line">            f = <span class="number">-1</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x = x * <span class="number">10</span> + c - <span class="string">'0'</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> h, l;</span><br><span class="line">&#125; b[<span class="number">1603</span>];<span class="comment">//表示每个数的行列</span></span><br><span class="line"><span class="keyword">int</span> n, a[<span class="number">40</span>][<span class="number">40</span>];<span class="comment">//a[i][j]表示第i行第j列的数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    n = gi();<span class="comment">//输入幻方的大小</span></span><br><span class="line">    a[<span class="number">1</span>][(n + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>] = <span class="number">1</span>;<span class="comment">//填好最中间的数</span></span><br><span class="line">    b[<span class="number">1</span>].h = <span class="number">1</span>, b[<span class="number">1</span>].l = (n + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>;<span class="comment">//把1的行列确定下来</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n * n; i++)<span class="comment">//依次填每一个数</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (b[i - <span class="number">1</span>].h == <span class="number">1</span> &amp;&amp; b[i - <span class="number">1</span>].l != n)<span class="comment">//在第1行且不在第n列</span></span><br><span class="line">        &#123;</span><br><span class="line">            b[i].h = n, b[i].l = b[i - <span class="number">1</span>].l + <span class="number">1</span>;</span><br><span class="line">            a[b[i].h][b[i].l] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (b[i - <span class="number">1</span>].h != <span class="number">1</span> &amp;&amp; b[i - <span class="number">1</span>].l == n)<span class="comment">//在第n列且不在第1行</span></span><br><span class="line">        &#123;</span><br><span class="line">            b[i].l = <span class="number">1</span>, b[i].h = b[i - <span class="number">1</span>].h - <span class="number">1</span>;</span><br><span class="line">            a[b[i].h][b[i].l] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (b[i - <span class="number">1</span>].h == <span class="number">1</span> &amp;&amp; b[i - <span class="number">1</span>].l == n)<span class="comment">//在第1行第n列</span></span><br><span class="line">        &#123;</span><br><span class="line">            b[i].h = b[i - <span class="number">1</span>].h + <span class="number">1</span>, b[i].l = n;</span><br><span class="line">            a[b[i].h][b[i].l] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (b[i - <span class="number">1</span>].h != <span class="number">1</span> &amp;&amp; b[i - <span class="number">1</span>].l != n)<span class="comment">//不在第1行且不在第n列</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[b[i - <span class="number">1</span>].h - <span class="number">1</span>][b[i - <span class="number">1</span>].l + <span class="number">1</span>] == <span class="number">0</span>)<span class="comment">//如果当前位置还没有数</span></span><br><span class="line">            &#123;</span><br><span class="line">                b[i].h = b[i - <span class="number">1</span>].h - <span class="number">1</span>, b[i].l = b[i - <span class="number">1</span>].l + <span class="number">1</span>;</span><br><span class="line">                a[b[i].h][b[i].l] = i;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span><span class="comment">//当前位置有数</span></span><br><span class="line">            &#123;</span><br><span class="line">                b[i].h = b[i - <span class="number">1</span>].h + <span class="number">1</span>, b[i].l = b[i - <span class="number">1</span>].l;</span><br><span class="line">                a[b[i].h][b[i].l] = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//按顺序输出</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d "</span>, a[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">""</span>);<span class="comment">//记得换行</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>	
 	</div>
 	
-	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
+	<div id="current-post-cover" data-scr="/images/文章摘要插图/10.jpg"></div>
 
 	<!-- relate post, comment...-->
 	<div class="investment-container">
@@ -433,7 +433,7 @@
 						<div class="relate-post-cover">
 							<a href="/2019/05/20/题解-洛谷P1969-NOIP2013-积木大赛/" title="题解[洛谷P1969][NOIP2013]积木大赛">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[洛谷P1969][NOIP2013]积木大赛">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/13.jpg" alt="题解[洛谷P1969][NOIP2013]积木大赛">
 							</a>
 						</div>
 					</li>											
@@ -458,7 +458,7 @@
 						<div class="relate-post-cover">
 							<a href="/2019/05/20/题解-洛谷P5019-NOIP2018-铺设道路/" title="题解[洛谷P5019][NOIP2018]铺设道路">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[洛谷P5019][NOIP2018]铺设道路">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/11.jpg" alt="题解[洛谷P5019][NOIP2018]铺设道路">
 							</a>
 						</div>
 					</li>											
@@ -483,7 +483,7 @@ T1...
 						<div class="relate-post-cover">
 							<a href="/2019/05/15/NOIP2016普及组解题报告/" title="NOIP2016普及组解题报告">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="NOIP2016普及组解题报告">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/7.jpg" alt="NOIP2016普及组解题报告">
 							</a>
 						</div>
 					</li>											
@@ -510,7 +510,7 @@ T1...
 						<div class="relate-post-cover">
 							<a href="/2019/05/12/NOIP2018游记/" title="NOIP2018游记">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="NOIP2018游记">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/2.jpg" alt="NOIP2018游记">
 							</a>
 						</div>
 					</li>											
@@ -538,7 +538,7 @@ Translation输入一个树状天平，根据力矩相...
 						<div class="relate-post-cover">
 							<a href="/2019/05/19/题解-UVA839-天平-Not-so-Mobile/" title="题解[UVA839]天平 Not so Mobile">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[UVA839]天平 Not so Mobile">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/9.jpg" alt="题解[UVA839]天平 Not so Mobile">
 							</a>
 						</div>
 					</li>											
@@ -589,7 +589,7 @@ Out...
 						<div class="relate-post-cover">
 							<a href="/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/" title="题解[CodeForces171C]A Piece of Cake">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[CodeForces171C]A Piece of Cake">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/5.png" alt="题解[CodeForces171C]A Piece of Cake">
 							</a>
 						</div>
 					</li>											
@@ -612,7 +612,33 @@ Out...
 						<div class="relate-post-cover">
 							<a href="/2019/05/13/题解-CodeForces1154-A-Restoring-Three-Numbers/" title="题解[CodeForces1154A]Restoring Three Numbers.md">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[CodeForces1154A]Restoring Three Numbers.md">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/4.png" alt="题解[CodeForces1154A]Restoring Three Numbers.md">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/27/主席树学习笔记/" title="主席树学习笔记">
+								主席树学习笔记			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 27日, 2019				
+							</p>
+							<p class="relate-post-content">
+								概述这篇文章是我对学习主席树的一个小结。
+当然，笔者很菜，除了模板就什么都不会打，也会有一些知识理解得不够深刻。
+因此，这篇文章以后还会不定期更新的。
+主席树主席树，全名称为可持久化线段树，也就是把每个阶段的线段树保存起来，每次可以直...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/27/主席树学习笔记/" title="主席树学习笔记">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/15.jpg" alt="主席树学习笔记">
 							</a>
 						</div>
 					</li>											
@@ -635,32 +661,7 @@ Out...
 						<div class="relate-post-cover">
 							<a href="/2019/05/20/题解-洛谷P3078-USACO13MAR-扑克牌型Poker-Hands/" title="题解[洛谷P3078][USACO13MAR]扑克牌型Poker Hands">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[洛谷P3078][USACO13MAR]扑克牌型Poker Hands">
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/05/18/动态规划学习笔记/" title="动态规划学习笔记">
-								动态规划学习笔记			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								五月 18日, 2019				
-							</p>
-							<p class="relate-post-content">
-								动态规划基本概念动态规划（又称 $DP$，$Dynamic$ $Programming$）是一种将问题分阶段求解的算法。
-其能够通过利用先前阶段的计算结果快速得到后续阶段的结果，大大减少不必要的重复计算。
-状态的设计是解决动态规划问题...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/05/18/动态规划学习笔记/" title="动态规划学习笔记">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="动态规划学习笔记">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/14.jpg" alt="题解[洛谷P3078][USACO13MAR]扑克牌型Poker Hands">
 							</a>
 						</div>
 					</li>											

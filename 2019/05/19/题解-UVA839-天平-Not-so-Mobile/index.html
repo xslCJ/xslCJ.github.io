@@ -320,7 +320,7 @@
 
 	<a href="/2019/05/19/题解-UVA839-天平-Not-so-Mobile/" itemprop="url">
 		<time datetime="2019-05-19T07:46:38.000Z" itemprop="dateUpdated">
-	  		2019-05-19
+	  		2019-05-27
 	  </time>
 	</a> 
 
@@ -362,7 +362,7 @@
 <h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>; <span class="keyword">char</span> c = getchar();</span><br><span class="line">    <span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>) &#123; <span class="keyword">if</span> (c == <span class="string">'-'</span>) f = <span class="number">-1</span>; c = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>) &#123; x = x * <span class="number">10</span> + c - <span class="string">'0'</span>; c = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t, y;<span class="comment">//t为询问总数,y为子天平的总重量</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">pd</span><span class="params">(<span class="keyword">int</span> &amp;x)</span><span class="comment">//输入一个子天平，返回子天平是否平衡，参数x为当前子天平的总重量</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b, c, d;<span class="comment">//输入顺序同题目翻译</span></span><br><span class="line">    <span class="keyword">bool</span> f = <span class="literal">true</span>, fl = <span class="literal">true</span>;<span class="comment">//判断有没有子天平</span></span><br><span class="line">    a = gi(), b = gi(), c = gi(), d = gi();<span class="comment">//输入</span></span><br><span class="line">    <span class="keyword">if</span> (!a) f = pd(a);<span class="comment">//左边有子天平</span></span><br><span class="line">    <span class="keyword">if</span> (!c) fl = pd(c);<span class="comment">//右边有子天平</span></span><br><span class="line">    x = a + c;<span class="comment">//修改总重量</span></span><br><span class="line">    <span class="keyword">return</span> (f &amp;&amp; fl &amp;&amp; (a * b == c * d));<span class="comment">//进行判断</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">//进入主函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    t = gi();<span class="comment">//输入数据组数</span></span><br><span class="line">    <span class="keyword">while</span> (t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (pd(y)) <span class="built_in">puts</span>(<span class="string">"YES"</span>);<span class="comment">//如果合法就输出YES</span></span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"NO"</span>);<span class="comment">//否则输出NO</span></span><br><span class="line">        <span class="keyword">if</span> (t) <span class="built_in">puts</span>(<span class="string">""</span>);<span class="comment">//每组数据用空行隔开，最后一组数据后不要输出空行</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//结束主函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>	
 	</div>
 	
-	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
+	<div id="current-post-cover" data-scr="/images/文章摘要插图/9.jpg"></div>
 
 	<!-- relate post, comment...-->
 	<div class="investment-container">
@@ -446,7 +446,7 @@ Out...
 						<div class="relate-post-cover">
 							<a href="/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/" title="题解[CodeForces171C]A Piece of Cake">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[CodeForces171C]A Piece of Cake">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/5.png" alt="题解[CodeForces171C]A Piece of Cake">
 							</a>
 						</div>
 					</li>											
@@ -469,7 +469,33 @@ Out...
 						<div class="relate-post-cover">
 							<a href="/2019/05/13/题解-CodeForces1154-A-Restoring-Three-Numbers/" title="题解[CodeForces1154A]Restoring Three Numbers.md">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[CodeForces1154A]Restoring Three Numbers.md">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/4.png" alt="题解[CodeForces1154A]Restoring Three Numbers.md">
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/05/27/主席树学习笔记/" title="主席树学习笔记">
+								主席树学习笔记			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								五月 27日, 2019				
+							</p>
+							<p class="relate-post-content">
+								概述这篇文章是我对学习主席树的一个小结。
+当然，笔者很菜，除了模板就什么都不会打，也会有一些知识理解得不够深刻。
+因此，这篇文章以后还会不定期更新的。
+主席树主席树，全名称为可持久化线段树，也就是把每个阶段的线段树保存起来，每次可以直...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/05/27/主席树学习笔记/" title="主席树学习笔记">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/15.jpg" alt="主席树学习笔记">
 							</a>
 						</div>
 					</li>											
@@ -492,7 +518,7 @@ Out...
 						<div class="relate-post-cover">
 							<a href="/2019/05/20/题解-洛谷P3078-USACO13MAR-扑克牌型Poker-Hands/" title="题解[洛谷P3078][USACO13MAR]扑克牌型Poker Hands">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[洛谷P3078][USACO13MAR]扑克牌型Poker Hands">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/14.jpg" alt="题解[洛谷P3078][USACO13MAR]扑克牌型Poker Hands">
 							</a>
 						</div>
 					</li>											
@@ -516,7 +542,7 @@ Out...
 						<div class="relate-post-cover">
 							<a href="/2019/05/20/题解-洛谷P1969-NOIP2013-积木大赛/" title="题解[洛谷P1969][NOIP2013]积木大赛">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[洛谷P1969][NOIP2013]积木大赛">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/13.jpg" alt="题解[洛谷P1969][NOIP2013]积木大赛">
 							</a>
 						</div>
 					</li>											
@@ -541,7 +567,7 @@ Out...
 						<div class="relate-post-cover">
 							<a href="/2019/05/20/题解-洛谷P5019-NOIP2018-铺设道路/" title="题解[洛谷P5019][NOIP2018]铺设道路">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[洛谷P5019][NOIP2018]铺设道路">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/11.jpg" alt="题解[洛谷P5019][NOIP2018]铺设道路">
 							</a>
 						</div>
 					</li>											
@@ -565,7 +591,7 @@ Out...
 						<div class="relate-post-cover">
 							<a href="/2019/05/19/题解-洛谷P2615-NOIP2015-神奇的幻方/" title="题解[洛谷P2615][NOIP2015]神奇的幻方">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="题解[洛谷P2615][NOIP2015]神奇的幻方">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/10.jpg" alt="题解[洛谷P2615][NOIP2015]神奇的幻方">
 							</a>
 						</div>
 					</li>											
@@ -590,7 +616,7 @@ Out...
 						<div class="relate-post-cover">
 							<a href="/2019/05/18/动态规划学习笔记/" title="动态规划学习笔记">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="动态规划学习笔记">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/8.jpg" alt="动态规划学习笔记">
 							</a>
 						</div>
 					</li>											
@@ -615,34 +641,7 @@ T1...
 						<div class="relate-post-cover">
 							<a href="/2019/05/15/NOIP2016普及组解题报告/" title="NOIP2016普及组解题报告">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="NOIP2016普及组解题报告">
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/05/12/NOIP2018游记/" title="NOIP2018游记">
-								NOIP2018游记			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								五月 12日, 2019				
-							</p>
-							<p class="relate-post-content">
-								我很荣幸能够参加NOIP2018！
-感谢指导老师多年来的指导，也要感谢CCF的组织！
-11月10日下午1:30我顺利地到达了长沙理工大学云塘新校区
-准备参加NOIP2018普及组的比赛。
-进入大厅就碰见了cjy一行人（他肯定比我666...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/05/12/NOIP2018游记/" title="NOIP2018游记">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="NOIP2018游记">
+								<img class="lazy" src="/img/placeholder.jpg" data-src="images/文章摘要插图/7.jpg" alt="NOIP2016普及组解题报告">
 							</a>
 						</div>
 					</li>											
