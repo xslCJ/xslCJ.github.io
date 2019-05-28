@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://xslcj.github.io">
   <title>动态规划学习笔记 | BrownBear的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="动态规划基本概念动态规划（又称 $DP$，$Dynamic$ $Programming$）是一种将问题分阶段求解的算法。 其能够通过利用先前阶段的计算结果快速得到后续阶段的结果，大大减少不必要的重复计算。 状态的设计是解决动态规划问题的关键。 设计状态时，要考虑到状态是否能够转移、转移的效率、以及求出所有所需状态的总时间复杂度。 状态的规模以及状态转移方程的实现效率共同决定了动态规划的效率。 线性">
+  <meta name="description" content="动态规划基本概念动态规划（又称 $DP$，$Dynamic$ $Programming$）是一种将问题分阶段求解的算法。">
 <meta name="keywords" content="动态规划">
 <meta property="og:type" content="article">
 <meta property="og:title" content="动态规划学习笔记">
 <meta property="og:url" content="http://xslcj.github.io/2019/05/18/动态规划学习笔记/index.html">
 <meta property="og:site_name" content="BrownBear的小屋">
-<meta property="og:description" content="动态规划基本概念动态规划（又称 $DP$，$Dynamic$ $Programming$）是一种将问题分阶段求解的算法。 其能够通过利用先前阶段的计算结果快速得到后续阶段的结果，大大减少不必要的重复计算。 状态的设计是解决动态规划问题的关键。 设计状态时，要考虑到状态是否能够转移、转移的效率、以及求出所有所需状态的总时间复杂度。 状态的规模以及状态转移方程的实现效率共同决定了动态规划的效率。 线性">
+<meta property="og:description" content="动态规划基本概念动态规划（又称 $DP$，$Dynamic$ $Programming$）是一种将问题分阶段求解的算法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T14:02:38.614Z">
+<meta property="og:updated_time" content="2019-05-28T13:30:23.263Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态规划学习笔记">
-<meta name="twitter:description" content="动态规划基本概念动态规划（又称 $DP$，$Dynamic$ $Programming$）是一种将问题分阶段求解的算法。 其能够通过利用先前阶段的计算结果快速得到后续阶段的结果，大大减少不必要的重复计算。 状态的设计是解决动态规划问题的关键。 设计状态时，要考虑到状态是否能够转移、转移的效率、以及求出所有所需状态的总时间复杂度。 状态的规模以及状态转移方程的实现效率共同决定了动态规划的效率。 线性">
+<meta name="twitter:description" content="动态规划基本概念动态规划（又称 $DP$，$Dynamic$ $Programming$）是一种将问题分阶段求解的算法。">
   
     <link rel="alternative" href="/atom.xml" title="BrownBear的小屋" type="application/atom+xml">
   
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://cdn.luogu.org/upload/usericon/70581.png" class="js-avatar">
+			<img src="https://i.loli.net/2019/05/28/5ced3acceed7f45540.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">BrownBear</a></h1>
@@ -62,7 +62,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -106,7 +106,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://cdn.luogu.org/upload/usericon/70581.png" class="js-avatar">
+				<img src="https://i.loli.net/2019/05/28/5ced3acceed7f45540.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">BrownBear</h1>
@@ -140,7 +140,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -175,8 +175,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="动态规划基本概念"><a href="#动态规划基本概念" class="headerlink" title="动态规划基本概念"></a>动态规划基本概念</h2><p>动态规划（又称 $DP$，$Dynamic$ $Programming$）是一种将问题分阶段求解的算法。</p>
-<p>其能够通过利用先前阶段的计算结果快速得到后续阶段的结果，大大减少不必要的重复计算。</p>
+        <h2 id="动态规划基本概念"><a href="#动态规划基本概念" class="headerlink" title="动态规划基本概念"></a>动态规划基本概念</h2><p>动态规划（又称 $DP$，$Dynamic$ $Programming$）是一种将问题分阶段求解的算法。<br><a id="more"></a><br>其能够通过利用先前阶段的计算结果快速得到后续阶段的结果，大大减少不必要的重复计算。</p>
 <p>状态的设计是解决动态规划问题的关键。</p>
 <p>设计状态时，要考虑到状态是否能够转移、转移的效率、以及求出所有所需状态的总时间复杂度。</p>
 <p>状态的规模以及状态转移方程的实现效率共同决定了动态规划的效率。</p>
@@ -213,6 +212,9 @@
 <p>详见 <a href="http://blog.xlightgod.cf/cf781daxel-and-marston-in-bitland/" target="_blank" rel="noopener">这里</a></p>
 
       
+        
+
+  <div class="declare" hidden="hidden"></div>
 
       
     </div>
@@ -365,12 +367,21 @@
   
 
 
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  
+  </section>
+
           </div>
         </div>
       </div>
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
+    	<span id="busuanzi_container_site_pv">    本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
     	<div class="footer-left">
     		&copy; 2019 BrownBear
     	</div>
@@ -424,6 +435,7 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -476,14 +488,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CodeForces题解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">NOIP</a>
               </li>
              
@@ -496,7 +500,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">CodeForces题解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,6 +520,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">2013</a>
               </li>
              
@@ -516,11 +532,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">USACO</a>
+                <a href="javascript:void(0)" class="js-tag color4">loj</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+                <a href="javascript:void(0)" class="js-tag color3">分块</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,11 +544,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">loj</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">分块</a>
+                <a href="javascript:void(0)" class="js-tag color1">USACO</a>
               </li>
              
               <li class="article-tag-list-item">

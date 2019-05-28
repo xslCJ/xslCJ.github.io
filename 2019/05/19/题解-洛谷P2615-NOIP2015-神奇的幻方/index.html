@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://xslcj.github.io">
   <title>题解[洛谷P2615][NOIP2015]神奇的幻方 | BrownBear的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述幻方是一种很神奇的 $N \times N$ 矩阵：它由数字 $1,2,3,\cdots \cdots ,N \times N$ 构成，且每行、每列及两条对角线上的数字之和都相同。 当 $N$ 为奇数时，我们可以通过下方法构建一个幻方： 首先将 $1$ 写在第一行的中间。 之后，按如下方式从小到大依次填写每个数 $K (K=2,3,\cdots,N \times N)$：  若 $(K-1">
+  <meta name="description" content="题目描述幻方是一种很神奇的 $N \times N$ 矩阵：它由数字 $1,2,3,\cdots \cdots ,N \times N$ 构成，且每行、每列及两条对角线上的数字之和都相同。">
 <meta name="keywords" content="NOIP,模拟,2015">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解[洛谷P2615][NOIP2015]神奇的幻方">
 <meta property="og:url" content="http://xslcj.github.io/2019/05/19/题解-洛谷P2615-NOIP2015-神奇的幻方/index.html">
 <meta property="og:site_name" content="BrownBear的小屋">
-<meta property="og:description" content="题目描述幻方是一种很神奇的 $N \times N$ 矩阵：它由数字 $1,2,3,\cdots \cdots ,N \times N$ 构成，且每行、每列及两条对角线上的数字之和都相同。 当 $N$ 为奇数时，我们可以通过下方法构建一个幻方： 首先将 $1$ 写在第一行的中间。 之后，按如下方式从小到大依次填写每个数 $K (K=2,3,\cdots,N \times N)$：  若 $(K-1">
+<meta property="og:description" content="题目描述幻方是一种很神奇的 $N \times N$ 矩阵：它由数字 $1,2,3,\cdots \cdots ,N \times N$ 构成，且每行、每列及两条对角线上的数字之和都相同。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T14:01:44.789Z">
+<meta property="og:updated_time" content="2019-05-28T13:31:04.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解[洛谷P2615][NOIP2015]神奇的幻方">
-<meta name="twitter:description" content="题目描述幻方是一种很神奇的 $N \times N$ 矩阵：它由数字 $1,2,3,\cdots \cdots ,N \times N$ 构成，且每行、每列及两条对角线上的数字之和都相同。 当 $N$ 为奇数时，我们可以通过下方法构建一个幻方： 首先将 $1$ 写在第一行的中间。 之后，按如下方式从小到大依次填写每个数 $K (K=2,3,\cdots,N \times N)$：  若 $(K-1">
+<meta name="twitter:description" content="题目描述幻方是一种很神奇的 $N \times N$ 矩阵：它由数字 $1,2,3,\cdots \cdots ,N \times N$ 构成，且每行、每列及两条对角线上的数字之和都相同。">
   
     <link rel="alternative" href="/atom.xml" title="BrownBear的小屋" type="application/atom+xml">
   
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://cdn.luogu.org/upload/usericon/70581.png" class="js-avatar">
+			<img src="https://i.loli.net/2019/05/28/5ced3acceed7f45540.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">BrownBear</a></h1>
@@ -62,7 +62,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -106,7 +106,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://cdn.luogu.org/upload/usericon/70581.png" class="js-avatar">
+				<img src="https://i.loli.net/2019/05/28/5ced3acceed7f45540.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">BrownBear</h1>
@@ -140,7 +140,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -175,8 +175,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>幻方是一种很神奇的 $N \times N$ 矩阵：它由数字 $1,2,3,\cdots \cdots ,N \times N$ 构成，且每行、每列及两条对角线上的数字之和都相同。</p>
-<p>当 $N$ 为奇数时，我们可以通过下方法构建一个幻方：</p>
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>幻方是一种很神奇的 $N \times N$ 矩阵：它由数字 $1,2,3,\cdots \cdots ,N \times N$ 构成，且每行、每列及两条对角线上的数字之和都相同。<br><a id="more"></a><br>当 $N$ 为奇数时，我们可以通过下方法构建一个幻方：</p>
 <p>首先将 $1$ 写在第一行的中间。</p>
 <p>之后，按如下方式从小到大依次填写每个数 $K (K=2,3,\cdots,N \times N)$：</p>
 <ol>
@@ -197,6 +196,9 @@
 <h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>按照题意模拟即可，没有什么思维难度，只是要注意一点细节。</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>; <span class="keyword">char</span> c = getchar();</span><br><span class="line">    <span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'-'</span>)</span><br><span class="line">            f = <span class="number">-1</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x = x * <span class="number">10</span> + c - <span class="string">'0'</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> h, l;</span><br><span class="line">&#125; b[<span class="number">1603</span>];<span class="comment">//表示每个数的行列</span></span><br><span class="line"><span class="keyword">int</span> n, a[<span class="number">40</span>][<span class="number">40</span>];<span class="comment">//a[i][j]表示第i行第j列的数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    n = gi();<span class="comment">//输入幻方的大小</span></span><br><span class="line">    a[<span class="number">1</span>][(n + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>] = <span class="number">1</span>;<span class="comment">//填好最中间的数</span></span><br><span class="line">    b[<span class="number">1</span>].h = <span class="number">1</span>, b[<span class="number">1</span>].l = (n + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>;<span class="comment">//把1的行列确定下来</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n * n; i++)<span class="comment">//依次填每一个数</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (b[i - <span class="number">1</span>].h == <span class="number">1</span> &amp;&amp; b[i - <span class="number">1</span>].l != n)<span class="comment">//在第1行且不在第n列</span></span><br><span class="line">        &#123;</span><br><span class="line">            b[i].h = n, b[i].l = b[i - <span class="number">1</span>].l + <span class="number">1</span>;</span><br><span class="line">            a[b[i].h][b[i].l] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (b[i - <span class="number">1</span>].h != <span class="number">1</span> &amp;&amp; b[i - <span class="number">1</span>].l == n)<span class="comment">//在第n列且不在第1行</span></span><br><span class="line">        &#123;</span><br><span class="line">            b[i].l = <span class="number">1</span>, b[i].h = b[i - <span class="number">1</span>].h - <span class="number">1</span>;</span><br><span class="line">            a[b[i].h][b[i].l] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (b[i - <span class="number">1</span>].h == <span class="number">1</span> &amp;&amp; b[i - <span class="number">1</span>].l == n)<span class="comment">//在第1行第n列</span></span><br><span class="line">        &#123;</span><br><span class="line">            b[i].h = b[i - <span class="number">1</span>].h + <span class="number">1</span>, b[i].l = n;</span><br><span class="line">            a[b[i].h][b[i].l] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (b[i - <span class="number">1</span>].h != <span class="number">1</span> &amp;&amp; b[i - <span class="number">1</span>].l != n)<span class="comment">//不在第1行且不在第n列</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[b[i - <span class="number">1</span>].h - <span class="number">1</span>][b[i - <span class="number">1</span>].l + <span class="number">1</span>] == <span class="number">0</span>)<span class="comment">//如果当前位置还没有数</span></span><br><span class="line">            &#123;</span><br><span class="line">                b[i].h = b[i - <span class="number">1</span>].h - <span class="number">1</span>, b[i].l = b[i - <span class="number">1</span>].l + <span class="number">1</span>;</span><br><span class="line">                a[b[i].h][b[i].l] = i;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span><span class="comment">//当前位置有数</span></span><br><span class="line">            &#123;</span><br><span class="line">                b[i].h = b[i - <span class="number">1</span>].h + <span class="number">1</span>, b[i].l = b[i - <span class="number">1</span>].l;</span><br><span class="line">                a[b[i].h][b[i].l] = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//按顺序输出</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d "</span>, a[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">""</span>);<span class="comment">//记得换行</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
+        
+
+  <div class="declare" hidden="hidden"></div>
 
       
     </div>
@@ -361,12 +363,21 @@
   
 
 
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  
+  </section>
+
           </div>
         </div>
       </div>
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
+    	<span id="busuanzi_container_site_pv">    本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
     	<div class="footer-left">
     		&copy; 2019 BrownBear
     	</div>
@@ -420,6 +431,7 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -472,14 +484,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CodeForces题解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">NOIP</a>
               </li>
              
@@ -492,7 +496,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">CodeForces题解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -504,6 +516,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">2013</a>
               </li>
              
@@ -512,11 +528,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">USACO</a>
+                <a href="javascript:void(0)" class="js-tag color4">loj</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+                <a href="javascript:void(0)" class="js-tag color3">分块</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,11 +540,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">loj</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">分块</a>
+                <a href="javascript:void(0)" class="js-tag color1">USACO</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://xslcj.github.io">
   <title>题解[洛谷P5019][NOIP2018]铺设道路 | BrownBear的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述春春是一名道路工程师，负责铺设一条长度为 $n$ 的道路。 铺设道路的主要工作是填平下陷的地表。整段道路可以看作是 $n$ 块首尾相连的区域，一开始，第 $i$ 块区域下陷的深度为 $d_i$​ 。 春春每天可以选择一段连续区间$[L,R]$ ，填充这段区间中的每块区域，让其下陷深度减少 $1$。在选择区间时，需要保证，区间内的每块区域在填充前下陷深度均不为 $0$ 。 春春希望你能帮他设">
+  <meta name="description" content="题目描述春春是一名道路工程师，负责铺设一条长度为 $n$ 的道路。 铺设道路的主要工作是填平下陷的地表。整段道路可以看作是 $n$ 块首尾相连的区域，一开始，第 $i$ 块区域下陷的深度为 $d_i$​ 。">
 <meta name="keywords" content="NOIP,2018,贪心">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解[洛谷P5019][NOIP2018]铺设道路">
 <meta property="og:url" content="http://xslcj.github.io/2019/05/20/题解-洛谷P5019-NOIP2018-铺设道路/index.html">
 <meta property="og:site_name" content="BrownBear的小屋">
-<meta property="og:description" content="题目描述春春是一名道路工程师，负责铺设一条长度为 $n$ 的道路。 铺设道路的主要工作是填平下陷的地表。整段道路可以看作是 $n$ 块首尾相连的区域，一开始，第 $i$ 块区域下陷的深度为 $d_i$​ 。 春春每天可以选择一段连续区间$[L,R]$ ，填充这段区间中的每块区域，让其下陷深度减少 $1$。在选择区间时，需要保证，区间内的每块区域在填充前下陷深度均不为 $0$ 。 春春希望你能帮他设">
+<meta property="og:description" content="题目描述春春是一名道路工程师，负责铺设一条长度为 $n$ 的道路。 铺设道路的主要工作是填平下陷的地表。整段道路可以看作是 $n$ 块首尾相连的区域，一开始，第 $i$ 块区域下陷的深度为 $d_i$​ 。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T14:01:37.952Z">
+<meta property="og:updated_time" content="2019-05-28T13:30:08.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解[洛谷P5019][NOIP2018]铺设道路">
-<meta name="twitter:description" content="题目描述春春是一名道路工程师，负责铺设一条长度为 $n$ 的道路。 铺设道路的主要工作是填平下陷的地表。整段道路可以看作是 $n$ 块首尾相连的区域，一开始，第 $i$ 块区域下陷的深度为 $d_i$​ 。 春春每天可以选择一段连续区间$[L,R]$ ，填充这段区间中的每块区域，让其下陷深度减少 $1$。在选择区间时，需要保证，区间内的每块区域在填充前下陷深度均不为 $0$ 。 春春希望你能帮他设">
+<meta name="twitter:description" content="题目描述春春是一名道路工程师，负责铺设一条长度为 $n$ 的道路。 铺设道路的主要工作是填平下陷的地表。整段道路可以看作是 $n$ 块首尾相连的区域，一开始，第 $i$ 块区域下陷的深度为 $d_i$​ 。">
   
     <link rel="alternative" href="/atom.xml" title="BrownBear的小屋" type="application/atom+xml">
   
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://cdn.luogu.org/upload/usericon/70581.png" class="js-avatar">
+			<img src="https://i.loli.net/2019/05/28/5ced3acceed7f45540.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">BrownBear</a></h1>
@@ -62,7 +62,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -106,7 +106,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://cdn.luogu.org/upload/usericon/70581.png" class="js-avatar">
+				<img src="https://i.loli.net/2019/05/28/5ced3acceed7f45540.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">BrownBear</h1>
@@ -140,7 +140,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -176,7 +176,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>春春是一名道路工程师，负责铺设一条长度为 $n$ 的道路。</p>
-<p>铺设道路的主要工作是填平下陷的地表。整段道路可以看作是 $n$ 块首尾相连的区域，一开始，第 $i$ 块区域下陷的深度为 $d_i$​ 。</p>
+<p>铺设道路的主要工作是填平下陷的地表。整段道路可以看作是 $n$ 块首尾相连的区域，一开始，第 $i$ 块区域下陷的深度为 $d_i$​ 。<br><a id="more"></a></p>
 <p>春春每天可以选择一段连续区间$[L,R]$ ，填充这段区间中的每块区域，让其下陷深度减少 $1$。在选择区间时，需要保证，区间内的每块区域在填充前下陷深度均不为 $0$ 。</p>
 <p>春春希望你能帮他设计一种方案，可以在最短的时间内将整段道路的下陷深度都变为 $0$ 。</p>
 <h3 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h3><h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入文件包含两行，第一行包含一个整数 $n$，表示道路的长度。 第二行包含 $n$ 个整数，相邻两数间用一个空格隔开，第 $i$ 个整数为 $d_i$​ 。</p>
@@ -194,6 +194,9 @@
 <p>根据这样的贪心策略，写出代码也就不难了。</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>; <span class="keyword">char</span> c = getchar();</span><br><span class="line">	<span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>) &#123; <span class="keyword">if</span> (c == <span class="string">'-'</span>) f = <span class="number">-1</span>; c = getchar();&#125;</span><br><span class="line">	<span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>) &#123; x = x * <span class="number">10</span> + c - <span class="string">'0'</span>; c = getchar();&#125;</span><br><span class="line">	<span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, a[<span class="number">100003</span>], ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    n = gi();<span class="comment">//输入道路的长度</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        a[i] = gi();<span class="comment">//输入坑的深度</span></span><br><span class="line">        <span class="keyword">if</span> (a[i] &gt; a[i - <span class="number">1</span>])ans = ans + a[i] - a[i - <span class="number">1</span>];<span class="comment">//如果当前深度比上一个坑的深度大，就进行贪心，累计答案</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, ans);<span class="comment">//最后输出答案即可</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
+        
+
+  <div class="declare" hidden="hidden"></div>
 
       
     </div>
@@ -358,12 +361,21 @@
   
 
 
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  
+  </section>
+
           </div>
         </div>
       </div>
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
+    	<span id="busuanzi_container_site_pv">    本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
     	<div class="footer-left">
     		&copy; 2019 BrownBear
     	</div>
@@ -417,6 +429,7 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -469,14 +482,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CodeForces题解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">NOIP</a>
               </li>
              
@@ -489,7 +494,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">CodeForces题解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -501,6 +514,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">2013</a>
               </li>
              
@@ -509,11 +526,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">USACO</a>
+                <a href="javascript:void(0)" class="js-tag color4">loj</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+                <a href="javascript:void(0)" class="js-tag color3">分块</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,11 +538,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">loj</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">分块</a>
+                <a href="javascript:void(0)" class="js-tag color1">USACO</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="BrownBear的小屋">
 <meta property="og:description" content="DescriptionPolycarp has guessed three positive integers $a$, $b$ and $c$. He keeps these numbers in secret, but he writes down four numbers on a board in arbitrary order — their pairwise sums (three n">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T14:02:27.533Z">
+<meta property="og:updated_time" content="2019-05-28T13:30:42.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题解[CodeForces1154A]Restoring Three Numbers.md">
 <meta name="twitter:description" content="DescriptionPolycarp has guessed three positive integers $a$, $b$ and $c$. He keeps these numbers in secret, but he writes down four numbers on a board in arbitrary order — their pairwise sums (three n">
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://cdn.luogu.org/upload/usericon/70581.png" class="js-avatar">
+			<img src="https://i.loli.net/2019/05/28/5ced3acceed7f45540.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">BrownBear</a></h1>
@@ -62,7 +62,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -106,7 +106,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://cdn.luogu.org/upload/usericon/70581.png" class="js-avatar">
+				<img src="https://i.loli.net/2019/05/28/5ced3acceed7f45540.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">BrownBear</h1>
@@ -140,7 +140,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -177,7 +177,7 @@
       
         <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Polycarp has guessed three positive integers $a$, $b$ and $c$. He keeps these numbers in secret, but he writes down four numbers on a board in arbitrary order — their pairwise sums (three numbers) and sum of all three numbers (one number). So, there are four numbers on a board in random order: $a+b$, $a+c$, $b+c$ and $a+b+c$.</p>
 <p>You have to guess three numbers $a$, $b$ and $c$ using given numbers. Print three guessed integers in any order.</p>
-<p>Pay attention that some given numbers $a$, $b$ and $c$ can be equal (it is also possible that $a=b=c$).</p>
+<p>Pay attention that some given numbers $a$, $b$ and $c$ can be equal (it is also possible that $a=b=c$).<br><a id="more"></a></p>
 <h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>The only line of the input contains four positive integers $x_{1}$,$x_{2}$,$x_{3}$,$x_{4}$($2$≤$x_{i}$≤$10^{9}$) — numbers written on a board in random order. It is guaranteed that the answer exists for the given number $x_{1}$,$x_{2}$,$x_{3}$,$x_{4}$.</p>
 <h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>Print such positive integers $a$, $b$ and $c$ that four numbers written on a board are values $a+b$, $a+c$, $b+c$ and $a+b+c$ written in some order. Print $a$, $b$ and $c$ in any order. If there are several answers, you can print any. It is guaranteed that the answer exists.</p>
 <h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><h5 id="Input1"><a href="#Input1" class="headerlink" title="Input1:"></a>Input1:</h5><blockquote>
@@ -220,6 +220,9 @@
 <h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;//头文件准备</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用标准名字空间</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span><span class="comment">//快速读入，不解释</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> c = getchar();</span><br><span class="line">    <span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'-'</span>)</span><br><span class="line">            f = <span class="number">-1</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x = x * <span class="number">10</span> + c - <span class="string">'0'</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a, b, c, x[<span class="number">5</span>];<span class="comment">//a、b、c和x数组的意义同分析</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span><span class="comment">//分别输入这四个数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	x[<span class="number">1</span>] = gi(), x[<span class="number">2</span>] = gi(), x[<span class="number">3</span>] = gi(), x[<span class="number">4</span>] = gi();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span><span class="comment">//将x数组从小到大排序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	sort(x + <span class="number">1</span>, x + <span class="number">1</span> + <span class="number">4</span>);<span class="comment">//1和4是指从x[1]到x[4]从小到大排序</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">output</span><span class="params">()</span><span class="comment">//输出的自函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>, x[<span class="number">4</span>] - x[<span class="number">1</span>], x[<span class="number">4</span>] - x[<span class="number">2</span>], x[<span class="number">4</span>] - x[<span class="number">3</span>]);<span class="comment">//分别输出a、b、c。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">//进入干净整洁的主函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	init();<span class="comment">//输入</span></span><br><span class="line">	solve();<span class="comment">//排序解决问题</span></span><br><span class="line">	output();<span class="comment">//输出</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//养成return 0的好习惯</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
+        
+
+  <div class="declare" hidden="hidden"></div>
 
       
     </div>
@@ -376,12 +379,21 @@
   
 
 
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  
+  </section>
+
           </div>
         </div>
       </div>
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
+    	<span id="busuanzi_container_site_pv">    本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
     	<div class="footer-left">
     		&copy; 2019 BrownBear
     	</div>
@@ -435,6 +447,7 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -487,14 +500,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CodeForces题解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">NOIP</a>
               </li>
              
@@ -507,7 +512,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">CodeForces题解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,6 +532,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">2013</a>
               </li>
              
@@ -527,11 +544,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">USACO</a>
+                <a href="javascript:void(0)" class="js-tag color4">loj</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+                <a href="javascript:void(0)" class="js-tag color3">分块</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,11 +556,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">loj</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">分块</a>
+                <a href="javascript:void(0)" class="js-tag color1">USACO</a>
               </li>
              
               <li class="article-tag-list-item">

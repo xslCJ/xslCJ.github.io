@@ -46,7 +46,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://cdn.luogu.org/upload/usericon/70581.png" class="js-avatar">
+			<img src="https://i.loli.net/2019/05/28/5ced3acceed7f45540.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">BrownBear</a></h1>
@@ -60,7 +60,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -104,7 +104,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://cdn.luogu.org/upload/usericon/70581.png" class="js-avatar">
+				<img src="https://i.loli.net/2019/05/28/5ced3acceed7f45540.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">BrownBear</h1>
@@ -138,7 +138,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -175,21 +175,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p><img src="https://i.loli.net/2019/05/19/5ce11f4ff2b5337330.png" alt></p>
-<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p><img src="https://i.loli.net/2019/05/19/5ce11f4fe9c9331354.png" alt></p>
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p><img src="https://i.loli.net/2019/05/19/5ce11f4fc6bb590759.png" alt></p>
-<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><h4 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">0 2 0 4</span><br><span class="line">0 3 0 1</span><br><span class="line">1 1 1 1</span><br><span class="line">2 4 4 2</span><br><span class="line">1 6 3 2</span><br></pre></td></tr></table></figure>
-<h4 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">YES</span><br></pre></td></tr></table></figure>
-<h3 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h3><p>输入一个树状天平，根据力矩相等原则判断是否平衡。</p>
-<p>采用递归（先序）方式输入：每个天平格式为$W_l,D_l,W_r,D_r$，当$W_l$或$W_r$为$0$时，表示该“砝码”实际是一个子天平，接下来会描述这个子天平。当$W_l=W_r=0$时，会先描述左子天平，然后是右子天平。</p>
-<p>其正确输出为$YES$，否则输出$NO$。</p>
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>这道题目的输入就采取了递归方式定义，所以编写一个递归函数进行输入比较自然。实际上，在输入的过程中就可以完成判断。由于使用了引用传值，因此，代码很精简。</p>
-<p><strong>本题极为重要，是递归的好题。</strong></p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>; <span class="keyword">char</span> c = getchar();</span><br><span class="line">    <span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>) &#123; <span class="keyword">if</span> (c == <span class="string">'-'</span>) f = <span class="number">-1</span>; c = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>) &#123; x = x * <span class="number">10</span> + c - <span class="string">'0'</span>; c = getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t, y;<span class="comment">//t为询问总数,y为子天平的总重量</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">pd</span><span class="params">(<span class="keyword">int</span> &amp;x)</span><span class="comment">//输入一个子天平，返回子天平是否平衡，参数x为当前子天平的总重量</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b, c, d;<span class="comment">//输入顺序同题目翻译</span></span><br><span class="line">    <span class="keyword">bool</span> f = <span class="literal">true</span>, fl = <span class="literal">true</span>;<span class="comment">//判断有没有子天平</span></span><br><span class="line">    a = gi(), b = gi(), c = gi(), d = gi();<span class="comment">//输入</span></span><br><span class="line">    <span class="keyword">if</span> (!a) f = pd(a);<span class="comment">//左边有子天平</span></span><br><span class="line">    <span class="keyword">if</span> (!c) fl = pd(c);<span class="comment">//右边有子天平</span></span><br><span class="line">    x = a + c;<span class="comment">//修改总重量</span></span><br><span class="line">    <span class="keyword">return</span> (f &amp;&amp; fl &amp;&amp; (a * b == c * d));<span class="comment">//进行判断</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">//进入主函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    t = gi();<span class="comment">//输入数据组数</span></span><br><span class="line">    <span class="keyword">while</span> (t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (pd(y)) <span class="built_in">puts</span>(<span class="string">"YES"</span>);<span class="comment">//如果合法就输出YES</span></span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"NO"</span>);<span class="comment">//否则输出NO</span></span><br><span class="line">        <span class="keyword">if</span> (t) <span class="built_in">puts</span>(<span class="string">""</span>);<span class="comment">//每组数据用空行隔开，最后一组数据后不要输出空行</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//结束主函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p><img src="https://i.loli.net/2019/05/19/5ce11f4ff2b5337330.png" alt><br>
+        
+          <a class="article-more-a" href="/2019/05/19/题解-UVA839-天平-Not-so-Mobile/#more">阅读全文 >></a>
+        
       
+        
+
+  <div class="declare" hidden="hidden"></div>
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -252,6 +248,14 @@
 
 
 
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  
+  </section>
+
   
     <article id="post-动态规划学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -273,47 +277,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="动态规划基本概念"><a href="#动态规划基本概念" class="headerlink" title="动态规划基本概念"></a>动态规划基本概念</h2><p>动态规划（又称 $DP$，$Dynamic$ $Programming$）是一种将问题分阶段求解的算法。</p>
-<p>其能够通过利用先前阶段的计算结果快速得到后续阶段的结果，大大减少不必要的重复计算。</p>
-<p>状态的设计是解决动态规划问题的关键。</p>
-<p>设计状态时，要考虑到状态是否能够转移、转移的效率、以及求出所有所需状态的总时间复杂度。</p>
-<p>状态的规模以及状态转移方程的实现效率共同决定了动态规划的效率。</p>
-<h2 id="线性DP"><a href="#线性DP" class="headerlink" title="线性DP"></a>线性DP</h2><p>线性 $DP$ 是在线性序列上进行 $DP$ 的一类问题。</p>
-<p>一些线性 $DP$ 其实等价于递推。</p>
-<h3 id="例题【洛谷P1020-导弹拦截】"><a href="#例题【洛谷P1020-导弹拦截】" class="headerlink" title="例题【洛谷P1020 导弹拦截】"></a>例题【洛谷P1020 导弹拦截】</h3><h4 id="100-分"><a href="#100-分" class="headerlink" title="$100$ 分"></a>$100$ 分</h4><p>第一问是求其最长不升子序列，第二问是求其最长上升子序列，本质相同，以第二问为例。</p>
-<p>令 $f[i]$ 表示以 $i$ 结尾的最长上升子序列。</p>
-<p>则 $f[i]$ = $max(f[j])$ $+$ $1$ ，其中 $j &lt; i$, $a[j] &lt; a[i]$ 。</p>
-<p>对于每个 $i$ 暴力枚举 $j 即可。</p>
-<p>答案为所有 $f$ 的最大值。</p>
-<p>时间复杂度 $O(n^2)$。</p>
-<h4 id="200-分"><a href="#200-分" class="headerlink" title="$200$ 分"></a>$200$ 分</h4><p>考虑优化上述转移过程。</p>
-<p>对于每个 $i$ ，需要查询最大的 $f[j]$ ，满足 $a[j]$ $&lt;$ $a[i]$ 。</p>
-<p>$f[j]$ 的值域为 $[1, n − 1]$ 。</p>
-<p>我们可以记录 $d[x]$ 表示 $f$ 值为 $x$ 的最小 $a[j]$ 。</p>
-<p>那么显然 $d$ 值是单调不下降的（反证法，若存在 $d[k+1] &lt; d[k]$ ，则 $d[k+1]$所对应的长度为 $k + 1$ 的上升子序列的第 $k$ 个数 &lt; $d[k+1] &lt; d[k]$ ，即 $d[k]$应被更新）。</p>
-<p>那么我们可以二分，找到最大的满足限制的 $x$ ，则 $f[i]$ $= x + 1$ 。</p>
-<p>这样时间复杂度就被优化到了 $O(n log n)$。</p>
-<h2 id="区间DP"><a href="#区间DP" class="headerlink" title="区间DP"></a>区间DP</h2><p>区间 $DP$ 的思想是由小区间的状态合并得到大区间的状态。</p>
-<h3 id="例题：【洛谷P4290-HAOI2008-玩具取名】"><a href="#例题：【洛谷P4290-HAOI2008-玩具取名】" class="headerlink" title="例题：【洛谷P4290 [HAOI2008]玩具取名】"></a>例题：【洛谷P4290 [HAOI2008]玩具取名】</h3><p>令 $f[l][r][c]$ 表示名字的 $[l,r]$ 区间是否可以由 $c$ 字母变形而来。</p>
-<p>目标是求 $f[1][n][c]$ ，其中 $c ∈ {W, I, N, G}$ 。</p>
-<p>按区间长度从小到大的顺序进行 $dp$。对于 $f[l][r][c]$ ，枚举第一个字母（也就是 $c$ ）变形成的两个字母是什么，及分别对应 $[l,r]$ 中的哪些位置，即可利用之前的 $dp$ 信息求出。</p>
-<h2 id="树形DP"><a href="#树形DP" class="headerlink" title="树形DP"></a>树形DP</h2><h3 id="例题：【洛谷P1352-没有上司的舞会】"><a href="#例题：【洛谷P1352-没有上司的舞会】" class="headerlink" title="例题：【洛谷P1352 没有上司的舞会】"></a>例题：【洛谷P1352 没有上司的舞会】</h3><p>令 $dp[i][1]$ 表示以 $i$ 为根的子树中选取任意多互不相邻的点的最大权值。</p>
-<p>令 $dp[i][0]$ 表示以 $i$ 为根的子树中选取任意多互不相邻的点，且 $i$ 点本身不选的最大权值。</p>
-<p>则 $dp[i][0] =∑ dp[k][1]$ ，其中 $k$ 为 $i$ 的儿子。及 $dp[i][1] = max(dp[i][0],∑ dp[k][0] + v[i])$ ，其中 k 为 i 的儿子。</p>
-<p>假设根节点为 $x$ ，则答案为 $dp[x][1]$ 。</p>
-<h2 id="背包DP"><a href="#背包DP" class="headerlink" title="背包DP"></a>背包DP</h2><p>一类形如“有容量为 $S$ 的背包，有若干体积 $v[i]$ ，价值 $w[i]$ 的物品，求最大能拿的价值”的问题。</p>
-<p>有很多变式，如 $01$ 背包、完全背包、多重背包、有依赖的背包、分组背包等等。</p>
-<p>推荐阅读《背包九讲》。</p>
-<h2 id="数位DP"><a href="#数位DP" class="headerlink" title="数位DP"></a>数位DP</h2><h3 id="例题：【洛谷P2602-ZJOI2010-数字计数】和【洛谷P2657-SCOI2009-windy数】"><a href="#例题：【洛谷P2602-ZJOI2010-数字计数】和【洛谷P2657-SCOI2009-windy数】" class="headerlink" title="例题：【洛谷P2602 [ZJOI2010]数字计数】和【洛谷P2657[SCOI2009]windy数】"></a>例题：【洛谷P2602 [ZJOI2010]数字计数】和【洛谷P2657[SCOI2009]windy数】</h3><h2 id="状压DP"><a href="#状压DP" class="headerlink" title="状压DP"></a>状压DP</h2><h3 id="例题：【洛谷P1896-SCOI2005-互不侵犯】和【洛谷P2473-SCOI2008-奖励关】"><a href="#例题：【洛谷P1896-SCOI2005-互不侵犯】和【洛谷P2473-SCOI2008-奖励关】" class="headerlink" title="例题：【洛谷P1896 [SCOI2005]互不侵犯】和【洛谷P2473 [SCOI2008]奖励关】"></a>例题：【洛谷P1896 [SCOI2005]互不侵犯】和【洛谷P2473 [SCOI2008]奖励关】</h3><h2 id="插头DP"><a href="#插头DP" class="headerlink" title="插头DP"></a>插头DP</h2><p>基于连通性状态压缩的动态规划问题。</p>
-<p>插头/轮廓线。</p>
-<p>详见陈丹琦论文。</p>
-<h2 id="bitset"><a href="#bitset" class="headerlink" title="bitset"></a>bitset</h2><p>$bitset$ 是 $STL$ 中的一种数据结构，能够储存一个长度为 $N$ 的二进制串，并且 $O(n/logn )$ 相互进行各种位运算。</p>
-<p>详见 <a href="http://blog.xlightgod.cf/cf781daxel-and-marston-in-bitland/" target="_blank" rel="noopener">这里</a></p>
+        <h2 id="动态规划基本概念"><a href="#动态规划基本概念" class="headerlink" title="动态规划基本概念"></a>动态规划基本概念</h2><p>动态规划（又称 $DP$，$Dynamic$ $Programming$）是一种将问题分阶段求解的算法。<br>
+        
+          <a class="article-more-a" href="/2019/05/18/动态规划学习笔记/#more">阅读全文 >></a>
+        
+      
+        
+
+  <div class="declare" hidden="hidden"></div>
 
       
-
-      
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -372,6 +346,14 @@
 
 
 
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  
+  </section>
+
   
     <article id="post-NOIP2016普及组解题报告" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -395,149 +377,13 @@
       
         <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>$NOIP2016$普及组的前三题都比较简单，第四题也有很多的暴力分，相信参加了的各位$OIer$在$2016$年都取得了很好的成绩。</p>
 <p>那么，我将会分析$NOIP2016$普及组的四道题目，希望对各位的$OI$学习有所帮助！</p>
-<h2 id="T1-买铅笔"><a href="#T1-买铅笔" class="headerlink" title="T1. 买铅笔"></a>T1. 买铅笔</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>$P$老师需要去商店买$n$支铅笔作为小朋友们参加$NOIP$的礼物。她发现商店一共有$3$种包装的铅笔，不同包装内的铅笔数量有可能不同，价格也有可能不同。为了公平起见，$P$老师决定只买同一种包装的铅笔。</p>
-<p>商店不允许将铅笔的包装拆开，因此$P$老师可能需要购买超过$n$支铅笔才够给小朋友们发礼物。</p>
-<p>现在$P$老师想知道，在商店每种包装的数量都足够的情况下，要买够至少$n$支铅笔最少需要花费多少钱。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行包含一个正整数$n$，表示需要的铅笔数量。</p>
-<p>接下来三行，每行用$2$个正整数描述一种包装的铅笔：其中第$1$个整数表示这种包装内铅笔的数量，第$2$个整数表示这种包装的价格。</p>
-<p>保证所有的$7$个数都是不超过$10000$的正整数。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>$1$个整数，表示$P$老师最少需要花费的钱。</p>
-<h3 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h3><h4 id="样例1"><a href="#样例1" class="headerlink" title="样例1"></a>样例1</h4><p>输入样例#1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">57</span><br><span class="line">2 2</span><br><span class="line">50 30</span><br><span class="line">30 27</span><br></pre></td></tr></table></figure></p>
-<p>输出样例#1： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">54</span><br></pre></td></tr></table></figure>
-<h4 id="样例2"><a href="#样例2" class="headerlink" title="样例2"></a>样例2</h4><p>输入样例#2： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">9998</span><br><span class="line">128 233</span><br><span class="line">128 2333</span><br><span class="line">128 666</span><br></pre></td></tr></table></figure>
-<p>输出样例#2： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">18407</span><br></pre></td></tr></table></figure>
-<h4 id="样例3"><a href="#样例3" class="headerlink" title="样例3"></a>样例3</h4><p>输入样例#3： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">9999</span><br><span class="line">101 1111</span><br><span class="line">1 9999</span><br><span class="line">1111 9999</span><br></pre></td></tr></table></figure>
-<p>输出样例#3： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">89991</span><br></pre></td></tr></table></figure>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>铅笔的三种包装分别是：</p>
-<ul>
-<li>$2$支装，价格为$2$;</li>
-<li>$50$支装，价格为$30$;</li>
-<li>$30$支装，价格为$27$。</li>
-</ul>
-<p>$P$老师需要购买至少$57$支铅笔。</p>
-<p>如果她选择购买第一种包装，那么她需要购买$29$份，共计$2 \times 29 = 58$支，需要花费的钱为$2 \times 29 = 58$。</p>
-<p>实际上，$P$老师会选择购买第三种包装，这样需要买$2$份。虽然最后买到的铅笔数量更多了，为$30 \times 2 = 60$支，但花费却减少为$27 \times 2 = 54$，比第一种少。</p>
-<p>对于第二种包装，虽然每支铅笔的价格是最低的，但要够发必须买$2$份，实际的花费达到了 $30 \times 2 = 60$，因此$P$老师也不会选择。</p>
-<p>所以最后输出的答案是$54$。</p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>$T1$总是这么水。</p>
-<p>直接暴力判断每种情况，最后输出最小值即可。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> c = getchar();</span><br><span class="line">	<span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (c == <span class="string">'-'</span>)</span><br><span class="line">			f = <span class="number">-1</span>;</span><br><span class="line">		c = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		x = x * <span class="number">10</span> + c - <span class="string">'0'</span>;</span><br><span class="line">		c = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a, b, n, c, a1, b1, c1, s1, s2, s3, k = <span class="number">2147483647</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = gi(), a = gi(), a1 = gi(), b = gi(), b1 = gi(), c = gi(), c1 = gi();</span><br><span class="line">	<span class="keyword">if</span> (n % a == <span class="number">0</span>)</span><br><span class="line">		s1 = a1 * (n / a);</span><br><span class="line">	<span class="keyword">if</span> (n % b == <span class="number">0</span>)</span><br><span class="line">		s2 = b1 * (n / b);</span><br><span class="line">	<span class="keyword">if</span> (n % c == <span class="number">0</span>)</span><br><span class="line">		s3 = c1 * (n / c);</span><br><span class="line">	<span class="keyword">if</span> (n % a != <span class="number">0</span>)</span><br><span class="line">		s1 = a1 * (n / a + <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">if</span> (n % a != <span class="number">0</span>)</span><br><span class="line">		s2 = b1 * (n / b + <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">if</span> (n % a != <span class="number">0</span>)</span><br><span class="line">		s3 = c1 * (n / c + <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">if</span> (k &gt; s1)</span><br><span class="line">		k = s1;</span><br><span class="line">	<span class="keyword">if</span> (k &gt; s2)</span><br><span class="line">		k = s2;</span><br><span class="line">	<span class="keyword">if</span> (k &gt; s3)</span><br><span class="line">		k = s3;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, k);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="T2-回文日期"><a href="#T2-回文日期" class="headerlink" title="T2. 回文日期"></a>T2. 回文日期</h2><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>在日常生活中，通过年、月、日这三个要素可以表示出一个唯一确定的日期。</p>
-<p>牛牛习惯用$8$位数字表示一个日期，其中，前$4$位代表年份，接下来$2$位代表月份，最后$2$位代表日期。显然：一个日期只有一种表示方法，而两个不同的日期的表示方法不会相同。</p>
-<p>牛牛认为，一个日期是回文的，当且仅当表示这个日期的$8$位数字是回文的。现在，牛牛想知道：在他指定的两个日期之间包含这两个日期本身），有多少个真实存在的日期是回文的。</p>
-<p>一个$8$位数字是回文的，当且仅当对于所有的$i ( 1 \le i \le 8)$从左向右数的第$i$个数字和第$9-i$个数字（即从右向左数的第$i$个数字）是相同的。</p>
-<p>例如：</p>
-<ul>
-<li><p>对于$2016$年$11$月$19$日，用$8$位数字$20161119$表示，它不是回文的。</p>
-</li>
-<li><p>对于$2010$年$1$月$2$日，用$8$位数字$20100102$表示，它是回文的。</p>
-</li>
-<li><p>对于$2010$年$10$月$2$日，用$8$位数字$20101002$表示，它不是回文的。</p>
-</li>
-</ul>
-<p>每一年中都有$12$个月份：</p>
-<p>其中，$1,3,5,7,8,10,12$月每个月有$31$天；$4,6,9,11$月每个月有$30$天；而对于$2$月，闰年时有$29$天，平年时有$28$天。</p>
-<p>一个年份是闰年当且仅当它满足下列两种情况其中的一种：</p>
-<ol>
-<li><p>这个年份是$4$的整数倍，但不是$100$的整数倍；</p>
-</li>
-<li><p>这个年份是$400$的整数倍。</p>
-</li>
-</ol>
-<p>例如：</p>
-<ul>
-<li><p>以下几个年份都是闰年：$2000,2012,2016$。</p>
-</li>
-<li><p>以下几个年份是平年：$1900,2011,2014$。</p>
-</li>
-</ul>
-<h3 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h3><p>两行，每行包括一个$8$位数字。</p>
-<p>第一行表示牛牛指定的起始日期。</p>
-<p>第二行表示牛牛指定的终止日期。</p>
-<p>保证$date_i$和都是真实存在的日期，且年份部分一定为$4$位数字，且首位数字不为$0$。</p>
-<p>保证$date1$一定不晚于$date2$。</p>
-<h3 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h3><p>一个整数，表示在$date1$和$date2$之间，有多少个日期是回文的。</p>
-<h3 id="输入输出样例-1"><a href="#输入输出样例-1" class="headerlink" title="输入输出样例"></a>输入输出样例</h3><h4 id="样例1-1"><a href="#样例1-1" class="headerlink" title="样例1"></a>样例1</h4><p>输入样例#1：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">20110101</span><br><span class="line">20111231</span><br></pre></td></tr></table></figure>
-<p>输出样例#1： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
-<h4 id="样例2-1"><a href="#样例2-1" class="headerlink" title="样例2"></a>样例2</h4><p>输入样例#2： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">20000101</span><br><span class="line">20101231</span><br></pre></td></tr></table></figure>
-<p>输出样例#2： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
-<h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><h4 id="样例说明"><a href="#样例说明" class="headerlink" title="样例说明"></a>样例说明</h4><p>对于样例$1$，符合条件的日期是$20111102$。</p>
-<p>对于样例$2$，符合条件的日期是$20011002$和$20100102$。</p>
-<h4 id="子任务"><a href="#子任务" class="headerlink" title="子任务"></a>子任务</h4><p>对于$60\%$的数据，满足$date1 = date2$。</p>
-<h3 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h3><p>$T2$也很简单</p>
-<p>直接枚举年份，然后依次暴力判断即可。</p>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> c = getchar();</span><br><span class="line">	<span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (c == <span class="string">'-'</span>)</span><br><span class="line">			f = <span class="number">-1</span>;</span><br><span class="line">		c = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		x = x * <span class="number">10</span> + c - <span class="string">'0'</span>;</span><br><span class="line">		c = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> date1, date2, i, j, k, l, a, b, a1, b1;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">hw</span><span class="params">(<span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (m != <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		n = n * <span class="number">10</span> + m % <span class="number">10</span>;</span><br><span class="line">		m /= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">pd</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> y = m / <span class="number">100</span>, r = m % <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">if</span> (y &lt;= <span class="number">0</span> || y &gt; <span class="number">12</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (r &lt;= <span class="number">0</span> || r &gt; <span class="number">31</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> ((y == <span class="number">4</span> || y == <span class="number">6</span> || y == <span class="number">9</span> || y == <span class="number">11</span>) &amp;&amp; r &gt; <span class="number">30</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (y == <span class="number">2</span> &amp;&amp; r &gt; <span class="number">29</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	date1 = gi(), date2 = gi();</span><br><span class="line">	a = date1 / <span class="number">10000</span>;</span><br><span class="line">	a1 = date1 % <span class="number">10000</span>;</span><br><span class="line">	b = date2 / <span class="number">10000</span>;</span><br><span class="line">	b1 = date2 % <span class="number">10000</span>;</span><br><span class="line">	<span class="keyword">if</span> (date1 == date2)</span><br><span class="line">	&#123;</span><br><span class="line">		date1 = date1 % <span class="number">10000</span>;</span><br><span class="line">		date2 = date2 / <span class="number">10000</span>;</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= <span class="number">4</span>; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			l = l * <span class="number">10</span> + date1 % <span class="number">10</span>;</span><br><span class="line">			date1 /= <span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (l == date2)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"1"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"0"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (hw(a) &gt;= a1 &amp;&amp; pd(hw(a), a))</span><br><span class="line">		k++;</span><br><span class="line">	<span class="keyword">if</span> (hw(b) &lt;= b1 &amp;&amp; pd(hw(b), b) &amp;&amp; a != b)</span><br><span class="line">		k++;</span><br><span class="line">	<span class="keyword">for</span> (i = a + <span class="number">1</span>; i &lt; b; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (pd(hw(i), i))</span><br><span class="line">			k++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, k);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="T3-海港"><a href="#T3-海港" class="headerlink" title="T3. 海港"></a>T3. 海港</h2><h3 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h3><p>$小K$是一个海港的海关工作人员，每天都有许多船只到达海港，船上通常有很多来自不同国家的乘客。</p>
-<p>$小K$对这些到达海港的船只非常感兴趣，他按照时间记录下了到达海港的每一艘船只情况；对于第i艘到达的船，他记录了这艘船到达的时间$t_{i}$ (单位：秒)，船上的乘 客数$k_i$​，以及每名乘客的国籍$x_{i,1}, x_{i,2},…,x_{i,k}$。</p>
-<p>$小K$统计了$n$艘船的信息，希望你帮忙计算出以每一艘船到达时间为止的$24$小时($24$小时$=$$86400$秒）内所有乘船到达的乘客来自多少个不同的国家。</p>
-<p>形式化地讲，你需要计算$n$条信息。对于输出的第$i$条信息，你需要统计满足$t_i-86400&lt;t_p \le t_i$​的船只$p$，在所有的$x_{p,j}$​中，总共有多少个不同的数。</p>
-<h3 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h3><h4 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行输入一个正整数$n$，表示$小K$统计了$n$艘船的信息。</p>
-<p>接下来$n$行，每行描述一艘船的信息：前两个整数$t_i$​和$k_i$​分别表示这艘船到达海港的时间和船上的乘客数量，接下来$k_i$​个整数$x_{i,j}$表示船上乘客的国籍。</p>
-<p>保证输入的$t_i$​是递增的，单位是秒；表示从$小K$第一次上班开始计时，这艘船在第$t_i$秒到达海港。</p>
-<h4 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出$n$行，第$i$行输出一个整数表示第$i$艘船到达后的统计信息。</p>
-<h3 id="输入输出样例-2"><a href="#输入输出样例-2" class="headerlink" title="输入输出样例"></a>输入输出样例</h3><h4 id="样例1-2"><a href="#样例1-2" class="headerlink" title="样例1"></a>样例1</h4><p>输入样例#1： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">1 4 4 1 2 2</span><br><span class="line">2 2 2 3</span><br><span class="line">10 1 3</span><br></pre></td></tr></table></figure>
-<p>输出样例#1： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">4</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
-<h4 id="样例2-2"><a href="#样例2-2" class="headerlink" title="样例2"></a>样例2</h4><p>输入样例#2： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">1 4 1 2 2 3</span><br><span class="line">3 2 2 3</span><br><span class="line">86401 2 3 4</span><br><span class="line">86402 1 5</span><br></pre></td></tr></table></figure>
-<p>输出样例#2： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">3</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
-<h3 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h3><h4 id="样例解释1"><a href="#样例解释1" class="headerlink" title="样例解释1"></a>样例解释1</h4><p>第一艘船在第$1$秒到达海港，最近$24$小时到达的船是第一艘船，共有$4$个乘客， 分别是来自国家$4,1,2,2$，共来自$3$个不同的国家；</p>
-<p>第二艘船在第$2$秒到达海港，最近$24$小时到达的船是第一艘船和第二艘船，共有$4 + 2 = 6$个乘客，分别是来自国家$4,1,2,2,2,3$，共来自$4$个不同的国家；</p>
-<p>第三艘船在第$10$秒到达海港，最近$24$小时到达的船是第一艘船、第二艘船和第 三艘船，共有$4+ 2+1=7$个乘客，分别是来自国家$4,1,2,2,2,3,3$，共来自4个不同的国家。</p>
-<h4 id="样例解释2"><a href="#样例解释2" class="headerlink" title="样例解释2"></a>样例解释2</h4><p>第一艘船在第$1$秒到达海港，最近$24$小时到达的船是第一艘船，共有$4$个乘客，分别是来自国家$1,2,2,3$，共来自$3$个不同的国家。</p>
-<p>第二艘船在第$3$秒到达海港，最近$24$小时到达的船是第一艘船和第二艘船，共有$4+2=6$个乘客，分别是来自国家$1,2,2,3,2,3$，共来自$3$个不同的国家。</p>
-<p>第三艘船在第$86401$秒到达海港，最近$24$小时到达的船是第二艘船和第三艘船，共有$2+2=4$个乘客，分别是来自国家$2,3,3,4$，共来自$3$个不同的国家。</p>
-<p>第四艘船在第$86402$秒到达海港，最近$24$小时到达的船是第二艘船、第三艘船和第四艘船，共有$2+2+1=5$个乘客，分别是来自国家$2,3,3,4,5$，共来自$4$个不同的国家。</p>
-<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><p>$1 \le n \le 10^5$，$\sum{ki} \le 3*10^5 $ ，$1\le x(i,j) \le 10^5$， $1 \le t(i-1)\le ti \le 10^9$。</p>
-<p>其中$\sum{ki}$表示所有的$k_i$​的和。</p>
-<h3 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h3><p>$T3$是个模拟水题。</p>
-<p>用队列维护当前时间内的乘客，并且统计出现过的国籍数，超过$24h$的就去掉。注意要一边输入一边统计。</p>
-<p>最后输出即可。</p>
-<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> c = getchar();</span><br><span class="line">	<span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (c == <span class="string">'-'</span>)</span><br><span class="line">			f = <span class="number">-1</span>;</span><br><span class="line">		c = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		x = x * <span class="number">10</span> + c - <span class="string">'0'</span>;</span><br><span class="line">		c = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t[<span class="number">100010</span>], p[<span class="number">100010</span>], q[<span class="number">100010</span>], w[<span class="number">500010</span>], n, s, head, tail, rs, i, j, k, l, r;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = gi();</span><br><span class="line">	p[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	head = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		t[i] = gi(), r = gi();</span><br><span class="line">		p[i + <span class="number">1</span>] = p[i] + r;</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">1</span>; j &lt;= r; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (!q[w[j + p[i] - <span class="number">1</span>] = gi()]++)</span><br><span class="line">			&#123;</span><br><span class="line">				s++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span> (t[i] - t[head] &gt;= <span class="number">86400</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (k = p[head]; k &lt; p[head + <span class="number">1</span>]; k++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (--q[w[k]] == <span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					s--;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			head++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, s);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="T4-魔法阵"><a href="#T4-魔法阵" class="headerlink" title="T4. 魔法阵"></a>T4. 魔法阵</h2><h3 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h3><p>六十年一次的魔法战争就要开始了，大魔法师准备从附近的魔法场中汲取魔法能量。</p>
-<p>大魔法师有$m$个魔法物品，编号分别为$1,2,…,m$。每个物品具有一个魔法值，我们用$X_i$​表示编号为$i$的物品的魔法值。每个魔法值$X_i$是不超过$n$的正整数，可能有多个物品的魔法值相同。</p>
-<p>大魔法师认为，当且仅当四个编号为$a,b,c,d$的魔法物品满足$x_a&lt;x_b&lt;x_c&lt;x_d,X_b-X_a=2(X_d-X_c)$，并且$x_b-x_a&lt;(x_c-x_b)/3$时，这四个魔法物品形成了一个魔法阵，他称这四个魔法物品分别为这个魔法阵的$A$物品，$B$物品，$C$物品，$D$物品。</p>
-<p>现在，大魔法师想要知道，对于每个魔法物品，作为某个魔法阵的$A$物品出现的次数，作为$B$物品的次数，作为$C$物品的次数，和作为$D$物品的次数。</p>
-<h3 id="输入输出格式-1"><a href="#输入输出格式-1" class="headerlink" title="输入输出格式"></a>输入输出格式</h3><h4 id="输入格式-3"><a href="#输入格式-3" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含两个空格隔开的正整数$n,m$。</p>
-<p>接下来$m$行，每行一个正整数，第$i+1$行的正整数表示$X_i$​，即编号为$i$的物品的魔法值。</p>
-<p>保证$1 \le n \le 15000$,$1 \le m \le 40000$,$1 \le Xi \le n$。每个$X_i$​是分别在合法范围内等概率随机生成的。</p>
-<h4 id="输出格式-3"><a href="#输出格式-3" class="headerlink" title="输出格式"></a>输出格式</h4><p>共$m$行，每行$4$个整数。第$i$行的$4$个整数依次表示编号为$i$的物品作为$A,B,C,D$物品分别出现的次数。</p>
-<p>保证标准输出中的每个数都不会超过$10^9$。每行相邻的两个数之间用恰好一个空格隔开。</p>
-<h3 id="输入输出样例-3"><a href="#输入输出样例-3" class="headerlink" title="输入输出样例"></a>输入输出样例</h3><h4 id="样例1-3"><a href="#样例1-3" class="headerlink" title="样例1"></a>样例1</h4><p>输入样例#1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">30 8</span><br><span class="line">1</span><br><span class="line">24</span><br><span class="line">7</span><br><span class="line">28</span><br><span class="line">5</span><br><span class="line">29</span><br><span class="line">26</span><br><span class="line">24</span><br></pre></td></tr></table></figure></p>
-<p>输出样例#1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">4 0 0 0</span><br><span class="line">0 0 1 0</span><br><span class="line">0 2 0 0</span><br><span class="line">0 0 1 1</span><br><span class="line">1 3 0 0</span><br><span class="line">0 0 0 2</span><br><span class="line">0 0 2 2</span><br><span class="line">0 0 1 0</span><br></pre></td></tr></table></figure></p>
-<h4 id="样例2-3"><a href="#样例2-3" class="headerlink" title="样例2"></a>样例2</h4><p>输入样例#2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">15 15</span><br><span class="line">1 </span><br><span class="line">2 </span><br><span class="line">3 </span><br><span class="line">4 </span><br><span class="line">5</span><br><span class="line">6 </span><br><span class="line">7 </span><br><span class="line">8 </span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td></tr></table></figure></p>
-<p>输出样例#2： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">5 0 0 0</span><br><span class="line">4 0 0 0</span><br><span class="line">3 5 0 0</span><br><span class="line">2 4 0 0</span><br><span class="line">1 3 0 0</span><br><span class="line">0 2 0 0</span><br><span class="line">0 1 0 0</span><br><span class="line">0 0 0 0</span><br><span class="line">0 0 0 0</span><br><span class="line">0 0 1 0</span><br><span class="line">0 0 2 1</span><br><span class="line">0 0 3 2</span><br><span class="line">0 0 4 3</span><br><span class="line">0 0 5 4</span><br><span class="line">0 0 0 5</span><br></pre></td></tr></table></figure>
-<h3 id="说明-3"><a href="#说明-3" class="headerlink" title="说明"></a>说明</h3><h4 id="样例解释1-1"><a href="#样例解释1-1" class="headerlink" title="样例解释1"></a>样例解释1</h4><p>共有$5$个魔法阵，分别为：</p>
-<p>物品$1,3,7,6$，其魔法值分别为$1,7,26,29$;</p>
-<p>物品$1,5,2,7$，其魔法值分别为$1,5,24,26$;</p>
-<p>物品$1,5,7,4$，其魔法值分别为$1,5,26,28$;</p>
-<p>物品$1,5,8,7$，其魔法值分别为$1,5,24,26$;</p>
-<p>物品$5,3,4,6$，其魔法值分别为$5,7,28,29$。</p>
-<p>以物品$5$为例，它作为$A$物品出现了$1$次，作为$B$物品出现了$3$次，没有作为$C$物品或者$D$物品出现，所以这一行输出的四个数依次为$1,3,0,0$。</p>
-<p>此外，如果我们将输出看作一个$m$行$4$列的矩阵，那么每一列上的$m$个数之和都应等于魔法阵的总数。所以，如果你的输出不满足这个性质，那么这个输出一定不正确。你可以通过这个性质在一定程度上检查你的输出的正确性。</p>
-<h3 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h3><p>这题纯暴力有$40$分，稍加优化就可以得到$65$分的高分。</p>
-<p>正解其实是推公式，运用了数学知识。</p>
-<p>公式在这里就不手推了，留给读者思考的空间，也可以参考网上的题解。</p>
-<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> c = getchar();</span><br><span class="line">	<span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (c == <span class="string">'-'</span>)</span><br><span class="line">			f = <span class="number">-1</span>;</span><br><span class="line">		c = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		x = x * <span class="number">10</span> + c - <span class="string">'0'</span>;</span><br><span class="line">		c = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> s, n, m, num[<span class="number">40010</span>], v[<span class="number">40010</span>], a[<span class="number">40010</span>], b[<span class="number">40010</span>], c[<span class="number">40010</span>], d[<span class="number">40010</span>], i, j, l, k, t, va, vb, vc, vd;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = gi(), m = gi();</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		v[i] = gi();</span><br><span class="line">		num[v[i]]++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (t = <span class="number">1</span>; t * <span class="number">9</span> &lt; n; t++)</span><br><span class="line">	&#123;</span><br><span class="line">		s = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (vd = <span class="number">9</span> * t + <span class="number">2</span>; vd &lt;= n; vd++)</span><br><span class="line">		&#123;</span><br><span class="line">			vc = vd - t;</span><br><span class="line">			vb = vc - <span class="number">6</span> * t - <span class="number">1</span>;</span><br><span class="line">			va = vb - <span class="number">2</span> * t;</span><br><span class="line">			s = s + num[vb] * num[va];</span><br><span class="line">			c[vc] = c[vc] + num[vd] * s;</span><br><span class="line">			d[vd] = d[vd] + num[vc] * s;</span><br><span class="line">		&#125;</span><br><span class="line">		s = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (va = n - <span class="number">9</span> * t - <span class="number">1</span>; va &gt;= <span class="number">1</span>; va--)</span><br><span class="line">		&#123;</span><br><span class="line">			vb = va + <span class="number">2</span> * t;</span><br><span class="line">			vc = vb + <span class="number">6</span> * t + <span class="number">1</span>;</span><br><span class="line">			vd = vc + t;</span><br><span class="line">			s = s + num[vc] * num[vd];</span><br><span class="line">			a[va] = a[va] + num[vb] * s;</span><br><span class="line">			b[vb] = b[vb] + num[va] * s;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d %d %d %d\n"</span>, a[v[i]], b[v[i]], c[v[i]], d[v[i]]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这套题总体来说并不难，只要您合理分配时间、认真思考，就应该能得到$100+100+100+40=340$的高分（除了某些考场上手推数学公式的数学大佬$T4$可以拿满分）。</p>
-<p>$T1$和$T2$考察了选手的语言基础，只要细心就可以拿全$200$分。</p>
-<p>$T3$考验了选手的耐心和分析能力，在处理细节方面要注意：<strong>细节决定成败！</strong></p>
-<p>$T4$就是推数学公式，暴力分也很多，考察了选手的数学能力。</p>
-<p>希望大家在以后的$OI$道路上能够顺风顺水！</p>
-
+        
+          <a class="article-more-a" href="/2019/05/15/NOIP2016普及组解题报告/#more">阅读全文 >></a>
+        
       
+        
+
+  <div class="declare" hidden="hidden"></div>
 
       
     </div>
@@ -611,6 +457,14 @@
 
 
 
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  
+  </section>
+
   
     <article id="post-题解-loj6277-数列分块入门1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -632,42 +486,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给出一个长为$n$的数列，以及$n$个操作，操作涉及区间加法，单点查值。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行输入一个数字$n$。</p>
-<p>第二行输入$n$个数字，第$i$个数字为$a_{i}$，以空格隔开。</p>
-<p>接下来输入$n$行询问，每行输入四个数字$opt$、$l$、$r$、$c$，以空格隔开。</p>
-<p>若$opt = 0$，表示将位于$[l, r]$的之间的数字都加$c$。</p>
-<p>若$opt = 1$，表示询问$a_{r}$的值（$l$和$c$忽略）。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>对于每次询问，输出一行一个数字表示答案。</p>
-<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><blockquote>
-<p>4</p>
-<p>1 2 2 3</p>
-<p>0 1 3 1</p>
-<p>1 0 1 0</p>
-<p>0 1 2 2</p>
-<p>1 0 2 0</p>
-</blockquote>
-<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><blockquote>
-<p>2</p>
-<p>5</p>
-</blockquote>
-<h3 id="数据范围与提示"><a href="#数据范围与提示" class="headerlink" title="数据范围与提示"></a>数据范围与提示</h3><p>对于所有的数据，$1 \leq n \le 50000$ ，$-2^{31} \leq others、ans \le 2_{31} - 1$ 。</p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>这是一道很好的分块入门题。</p>
-<p>所谓分块，就是一种通过将一个序列分成多块后，在每块上打标记以实现快速区间修改，区间查询的一种算法。其均摊时间复杂度为$\Theta\sqrt{n}$。</p>
-<p>在一般情况下，每个块的长度都为$\sqrt{n}$。</p>
-<p>分块，被尊称为优雅的暴力，因此它的代码难度也不算高。总之，比线段树、树状数组等<del>毒瘤</del>数据结构的代码难度低。</p>
-<p>我们需要建立三个数组：</p>
-<ul>
-<li>$a[]$，为题目中输入的序列；</li>
-<li>$b[]$，记录每个序列中的每个数在那一块；</li>
-<li>$add[]$，为序列的标记数组。</li>
-</ul>
-<p>话不多说，上代码。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;//头文件准备</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用标准名字空间</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span><span class="comment">//快速读入</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>; <span class="keyword">char</span> c = getchar();</span><br><span class="line">	<span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>) &#123; <span class="keyword">if</span> (c == <span class="string">'-'</span>)f = <span class="number">-1</span>; c = getchar();&#125;</span><br><span class="line">	<span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>) &#123; x = x * <span class="number">10</span> + c - <span class="string">'0'</span>; c = getchar();&#125;</span><br><span class="line">	<span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">50005</span>], b[<span class="number">50005</span>], add[<span class="number">50005</span>], len, n, m;<span class="comment">//a[],b[],add[]的意思如分析，len为每一块的长度，n为序列长度，m为询问个数，在本题中=n。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x)</span><span class="comment">//区间修改的自定义函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt;= min(r, b[l] * len); i++) a[i] = a[i] + x;<span class="comment">//增加序列中的数</span></span><br><span class="line">	<span class="keyword">if</span> (b[l] != b[r])<span class="comment">//如果要修改的不在同一个块中</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = (b[r] - <span class="number">1</span>) * len + <span class="number">1</span>; i &lt;= r; i++) a[i] = a[i] + x;<span class="comment">//继续增加序列中的数</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = b[l] + <span class="number">1</span>; i &lt;= b[r] - <span class="number">1</span>; i++) add[i] = add[i] + x;<span class="comment">//给区间内的数增加标记</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">//进入主函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = gi();<span class="comment">//输入元素个数</span></span><br><span class="line">	len = <span class="built_in">sqrt</span>(n);<span class="comment">//求出每个块的长度</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) a[i] = gi();<span class="comment">//输入序列中的数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) b[i] = (i - <span class="number">1</span>) / len + <span class="number">1</span>;<span class="comment">//求出序列中的数分别属于哪一个块</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> p = <span class="number">1</span>; p &lt;= n; p++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> fl = gi(), l = gi(), r = gi(), w = gi();<span class="comment">//输入操作的描述</span></span><br><span class="line">		<span class="keyword">if</span> (!fl)<span class="comment">//如果是修改</span></span><br><span class="line">		&#123;</span><br><span class="line">			modify(l, r, w);<span class="comment">//修改区间内的数</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span><span class="comment">//否则就是求出某个数</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, a[r] + add[b[r]]);<span class="comment">//输出这个位置的数的标记和它在序列中原本的数的和</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//完美结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给出一个长为$n$的数列，以及$n$个操作，操作涉及区间加法，单点查值。<br>
+        
+          <a class="article-more-a" href="/2019/05/14/题解-loj6277-数列分块入门1/#more">阅读全文 >></a>
+        
       
+        
+
+  <div class="declare" hidden="hidden"></div>
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -730,6 +559,14 @@
 
 
 
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  
+  </section>
+
   
     <article id="post-题解-CodeForces171C-A-Piece-of-Cake" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -753,22 +590,17 @@
       
         <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>给你$n$个数，求出$\sum_{i=1}^{n} a_{i}\times i\qquad$</p>
 <h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>共$n + 1$个数，分别为$n$和$n$个数$a_{i}$($1$$\leq i \le n$)。</p>
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>$\sum_{i=1}^{n} a_{i}\times i\qquad$</p>
-<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><h4 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h4><blockquote>
-<p>4 1 2 3 4</p>
-</blockquote>
-<h4 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h4><blockquote>
-<p>30</p>
-</blockquote>
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>根据题目翻译可知：这是一道模拟题。</p>
-<p>首先，输入一个整数$n$，接下来输入$n$个整数，分别为$a_{1}$,$a_{2}$, $\cdots$,$a_{n}$ ，要你输出$ans$ $=$ $\sum_{i=1}^{n} a_{i}\times i\qquad$</p>
-<p>我们可以用一层循环来枚举$i$，$i$的范围从$1$ ~ $n$，每次输入$a_{i}$时，就可以将答案$ans$增加$a_{i}$ $\times$ $i$，最后输出答案$ans$即可。</p>
-<p>算法时间复杂度：$\Theta(n)$，空间复杂度：$\Theta(1)$</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;//头文件准备</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用标准名字空间</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gi</span><span class="params">()</span><span class="comment">//快速读入，不解释</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">1</span>, x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> c = getchar();</span><br><span class="line">    <span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'-'</span>) f = <span class="number">-1</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x = x * <span class="number">10</span> + c - <span class="string">'0'</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, sum;<span class="comment">//n为数字的个数，sum为答案</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">//进入主函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = gi();<span class="comment">//输入数字个数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">int</span> x = gi();<span class="comment">//依次输入每个数</span></span><br><span class="line">        sum = sum + i * x;<span class="comment">//更新答案</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, sum);<span class="comment">//输出最终答案</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//完美结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>$\sum_{i=1}^{n} a_{i}\times i\qquad$<br>
+        
+          <a class="article-more-a" href="/2019/05/13/题解-CodeForces171C-A-Piece-of-Cake/#more">阅读全文 >></a>
+        
       
+        
+
+  <div class="declare" hidden="hidden"></div>
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -831,6 +663,14 @@
 
 
 
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  
+  </section>
+
   
   
     <nav id="page-nav">
@@ -845,6 +685,7 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
+    	<span id="busuanzi_container_site_pv">    本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
     	<div class="footer-left">
     		&copy; 2019 BrownBear
     	</div>
@@ -898,6 +739,7 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -950,14 +792,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CodeForces题解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">NOIP</a>
               </li>
              
@@ -970,7 +804,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">CodeForces题解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -982,6 +824,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">2013</a>
               </li>
              
@@ -990,11 +836,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">USACO</a>
+                <a href="javascript:void(0)" class="js-tag color4">loj</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+                <a href="javascript:void(0)" class="js-tag color3">分块</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1002,11 +848,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">loj</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">分块</a>
+                <a href="javascript:void(0)" class="js-tag color1">USACO</a>
               </li>
              
               <li class="article-tag-list-item">

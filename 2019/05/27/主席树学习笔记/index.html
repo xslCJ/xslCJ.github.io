@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://xslcj.github.io">
   <title>主席树学习笔记 | BrownBear的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概述这篇文章是我对学习主席树的一个小结。 当然，笔者很菜，除了模板就什么都不会打，也会有一些知识理解得不够深刻。 因此，这篇文章以后还会不定期更新的。 主席树主席树，全名称为可持久化线段树，也就是把每个阶段的线段树保存起来，每次可以直接访问一个阶段的状态，是神犇$HJT$发明出来的一种数据结构。 先放出一个经典模板题：静态区间第$k$小。 题目描述如题，给定$N$个整数构成的序列，将对于指定的闭区">
+  <meta name="description" content="概述这篇文章是我对学习主席树的一个小结。">
 <meta name="keywords" content="主席树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="主席树学习笔记">
 <meta property="og:url" content="http://xslcj.github.io/2019/05/27/主席树学习笔记/index.html">
 <meta property="og:site_name" content="BrownBear的小屋">
-<meta property="og:description" content="概述这篇文章是我对学习主席树的一个小结。 当然，笔者很菜，除了模板就什么都不会打，也会有一些知识理解得不够深刻。 因此，这篇文章以后还会不定期更新的。 主席树主席树，全名称为可持久化线段树，也就是把每个阶段的线段树保存起来，每次可以直接访问一个阶段的状态，是神犇$HJT$发明出来的一种数据结构。 先放出一个经典模板题：静态区间第$k$小。 题目描述如题，给定$N$个整数构成的序列，将对于指定的闭区">
+<meta property="og:description" content="概述这篇文章是我对学习主席树的一个小结。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T14:21:14.991Z">
+<meta property="og:updated_time" content="2019-05-28T13:29:48.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="主席树学习笔记">
-<meta name="twitter:description" content="概述这篇文章是我对学习主席树的一个小结。 当然，笔者很菜，除了模板就什么都不会打，也会有一些知识理解得不够深刻。 因此，这篇文章以后还会不定期更新的。 主席树主席树，全名称为可持久化线段树，也就是把每个阶段的线段树保存起来，每次可以直接访问一个阶段的状态，是神犇$HJT$发明出来的一种数据结构。 先放出一个经典模板题：静态区间第$k$小。 题目描述如题，给定$N$个整数构成的序列，将对于指定的闭区">
+<meta name="twitter:description" content="概述这篇文章是我对学习主席树的一个小结。">
   
     <link rel="alternative" href="/atom.xml" title="BrownBear的小屋" type="application/atom+xml">
   
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://cdn.luogu.org/upload/usericon/70581.png" class="js-avatar">
+			<img src="https://i.loli.net/2019/05/28/5ced3acceed7f45540.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">BrownBear</a></h1>
@@ -62,7 +62,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -106,7 +106,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://cdn.luogu.org/upload/usericon/70581.png" class="js-avatar">
+				<img src="https://i.loli.net/2019/05/28/5ced3acceed7f45540.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">BrownBear</h1>
@@ -140,7 +140,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -175,7 +175,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>这篇文章是我对学习主席树的一个小结。</p>
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>这篇文章是我对学习主席树的一个小结。<br><a id="more"></a></p>
 <p>当然，笔者很菜，<del>除了模板就什么都不会打</del>，也会有一些知识理解得不够深刻。</p>
 <p>因此，这篇文章以后还会不定期更新的。</p>
 <h2 id="主席树"><a href="#主席树" class="headerlink" title="主席树"></a>主席树</h2><p>主席树，全名称为可持久化线段树，也就是把每个阶段的线段树保存起来，每次可以直接访问一个阶段的状态，是神犇$HJT$发明出来的一种数据结构。</p>
@@ -222,6 +222,9 @@
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>主席树和可持久化数组的代码很短，但是，<strong>理解思路</strong>才是最重要的，它们的思想也很重要。</p>
 <h2 id="The-End"><a href="#The-End" class="headerlink" title="The End."></a>The End.</h2>
       
+        
+
+  <div class="declare" hidden="hidden"></div>
 
       
     </div>
@@ -365,12 +368,21 @@
   
 
 
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  
+  </section>
+
           </div>
         </div>
       </div>
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
+    	<span id="busuanzi_container_site_pv">    本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
     	<div class="footer-left">
     		&copy; 2019 BrownBear
     	</div>
@@ -424,6 +436,7 @@ MathJax.Hub.Queue(function() {
 </script>
 
 
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -476,14 +489,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CodeForces题解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">NOIP</a>
               </li>
              
@@ -496,7 +501,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">CodeForces题解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,6 +521,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">2013</a>
               </li>
              
@@ -516,11 +533,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">USACO</a>
+                <a href="javascript:void(0)" class="js-tag color4">loj</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+                <a href="javascript:void(0)" class="js-tag color3">分块</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,11 +545,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">loj</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">分块</a>
+                <a href="javascript:void(0)" class="js-tag color1">USACO</a>
               </li>
              
               <li class="article-tag-list-item">
