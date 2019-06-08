@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://xslcj.github.io">
-  <title>Tag: 主席树 | BrownBear的小屋</title>
+  <title>题解[洛谷P3951][NOIP2017]小凯的疑惑 | BrownBear的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="BrownBear的小屋">
-<meta property="og:type" content="website">
-<meta property="og:title" content="BrownBear的小屋">
-<meta property="og:url" content="http://xslcj.github.io/tags/主席树/index.html">
+  <meta name="description" content="题目描述小凯手中有两种面值的金币，两种面值均为正整数且彼此互素。每种金币小凯都有 无数个。在不找零的情况下，仅凭这两种金币，有些物品他是无法准确支付的。现在小 凯想知道在无法准确支付的物品中，最贵的价值是多少金币？注意：输入数据保证存在 小凯无法准确支付的商品。 输入输出格式输入格式两个正整数 $a$ 和 $b$，它们之间用一个空格隔开，表示小凯中金币的面值。 输出格式一个正整数 $N$，表示不找">
+<meta name="keywords" content="NOIP,数论,2017">
+<meta property="og:type" content="article">
+<meta property="og:title" content="题解[洛谷P3951][NOIP2017]小凯的疑惑">
+<meta property="og:url" content="http://xslcj.github.io/2019/06/08/题解-洛谷P3951-NOIP2017-小凯的疑惑/index.html">
 <meta property="og:site_name" content="BrownBear的小屋">
-<meta property="og:description" content="BrownBear的小屋">
+<meta property="og:description" content="题目描述小凯手中有两种面值的金币，两种面值均为正整数且彼此互素。每种金币小凯都有 无数个。在不找零的情况下，仅凭这两种金币，有些物品他是无法准确支付的。现在小 凯想知道在无法准确支付的物品中，最贵的价值是多少金币？注意：输入数据保证存在 小凯无法准确支付的商品。 输入输出格式输入格式两个正整数 $a$ 和 $b$，它们之间用一个空格隔开，表示小凯中金币的面值。 输出格式一个正整数 $N$，表示不找">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-08T09:31:11.920Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BrownBear的小屋">
-<meta name="twitter:description" content="BrownBear的小屋">
+<meta name="twitter:title" content="题解[洛谷P3951][NOIP2017]小凯的疑惑">
+<meta name="twitter:description" content="题目描述小凯手中有两种面值的金币，两种面值均为正整数且彼此互素。每种金币小凯都有 无数个。在不找零的情况下，仅凭这两种金币，有些物品他是无法准确支付的。现在小 凯想知道在无法准确支付的物品中，最贵的价值是多少金币？注意：输入数据保证存在 小凯无法准确支付的商品。 输入输出格式输入格式两个正整数 $a$ 和 $b$，它们之间用一个空格隔开，表示小凯中金币的面值。 输出格式一个正整数 $N$，表示不找">
   
     <link rel="alternative" href="/atom.xml" title="BrownBear的小屋" type="application/atom+xml">
   
@@ -141,71 +143,226 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-题解-洛谷P3951-NOIP2017-小凯的疑惑" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/27/主席树学习笔记/" class="archive-article-date">
-  	<time datetime="2019-05-27T13:45:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/27/主席树学习笔记/">主席树学习笔记</a>
+    <h1 class="article-title" itemprop="name">
+      题解[洛谷P3951][NOIP2017]小凯的疑惑
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/06/08/题解-洛谷P3951-NOIP2017-小凯的疑惑/" class="archive-article-date">
+  	<time datetime="2019-06-08T08:58:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>小凯手中有两种面值的金币，两种面值均为正整数且彼此互素。每种金币小凯都有 无数个。在不找零的情况下，仅凭这两种金币，有些物品他是无法准确支付的。现在小 凯想知道在无法准确支付的物品中，最贵的价值是多少金币？注意：输入数据保证存在 小凯无法准确支付的商品。</p>
+<h3 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h3><h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>两个正整数 $a$ 和 $b$，它们之间用一个空格隔开，表示小凯中金币的面值。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>一个正整数 $N$，表示不找零的情况下，小凯用手中的金币不能准确支付的最贵的物品的价值。</p>
+<h3 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h3><h4 id="输入样例-1"><a href="#输入样例-1" class="headerlink" title="输入样例#1"></a>输入样例#1</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3 7</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例-1"><a href="#输出样例-1" class="headerlink" title="输出样例#1"></a>输出样例#1</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">11</span><br></pre></td></tr></table></figure>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><h4 id="输入输出样例1-说明"><a href="#输入输出样例1-说明" class="headerlink" title="输入输出样例1 说明"></a>输入输出样例1 说明</h4><p>小凯手中有面值为$3$和$7$的金币无数个，在不找零的前提下无法准确支付价值为$1,2,4,5,8,11$ 的物品，其中最贵的物品价值为 $11$，比 $11$ 贵的物品都能买到，比如：</p>
+<p>$12 = 3 \times 4 + 7 \times 0$</p>
+<p>$13 = 3 \times 2 + 7 \times 1$</p>
+<p>$14 = 3 \times 0 + 7 \times 2$</p>
+<p>$15 = 3 \times 5 + 7 \times 0$</p>
+<h3 id="数据范围与约定"><a href="#数据范围与约定" class="headerlink" title="数据范围与约定"></a>数据范围与约定</h3><p>对于 $30\%$ 的数据：$1 \le a,b \le 50$。</p>
+<p>对于 $60\%$ 的数据：$1 \le a,b \le 10^4$。</p>
+<p>对于 $100\%$ 的数据：$1 \le a,b \le 10^9$。</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>这是一道很好的<del>猜结论</del>数论题。</p>
+<p>看到样例，不是$3 \times 7 - 10 = 11$吗？于是，我们大胆地提交了刚才的结论所对应的代码。</p>
+<p>咦？怎么没有$AC$？仔细一看数据范围：$1 \le a,b \le 10^9$，$10^9 \times 10^9$不是爆了$int$吗？于是赶快把$int$改为$long$ $long$。</p>
+<p>于是，我们就$AC$了！</p>
+<p>不过，我们还是要证明一下刚才的结论：</p>
+<p>设币值分别为$a$、$b$。</p>
+<p>容易得到：$a \times b$肯定可以用这两个币值表示出来。</p>
+<p>$a \times b - a$呢？当然也可以，用$b - 1$张$a$就可以了。</p>
+<p>$a \times b - b$呢？当然也可以，用$a - 1$张$b$就可以了。</p>
+<p>$a \times b - a - b$呢？貌似不能了。</p>
+<p>因式分解一下：</p>
+<p> $a \times b - a - b$ </p>
+<p>$= a(b - 1) - b$</p>
+<p>$= a(b - 1) - (b - 1) - 1$</p>
+<p>$=(a - 1)(b - 1) - 1$</p>
+<p>分不了了，说明$a \times b - a - b$不能用币值为$a$、$b$的钱凑出来。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```cpp</p>
+<h1 id="include"><a href="#include" class="headerlink" title="include "></a>include <iostream></iostream></h1><h1 id="include-1"><a href="#include-1" class="headerlink" title="include "></a>include <cstdio></cstdio></h1><h1 id="include-2"><a href="#include-2" class="headerlink" title="include "></a>include <cstdlib></cstdlib></h1><h1 id="include-3"><a href="#include-3" class="headerlink" title="include "></a>include <cstring></cstring></h1><h1 id="include-4"><a href="#include-4" class="headerlink" title="include "></a>include <algorithm></algorithm></h1><h1 id="include-5"><a href="#include-5" class="headerlink" title="include "></a>include <cmath></cmath></h1><h1 id="include-6"><a href="#include-6" class="headerlink" title="include "></a>include <cctype></cctype></h1><p>using namespace std;</p>
+<p>inline long long gi()<br>{<br>    long long f = 1, x = 0; char c = getchar();<br>    while (c &lt; ‘0’ || c &gt; ‘9’) { if (c == ‘-‘) f = -1; c = getchar();}<br>    while (c &gt;= ‘0’ &amp;&amp; c &lt;= ‘9’) { x = x <em> 10 + c - ‘0’; c = getchar();}<br>    return f </em> x;<br>}</p>
+<p>long long a, b;</p>
+<p>int main(void)<br>{<br>    a = gi(), b = gi();<br>    cout &lt;&lt; a * b - a - b;<br>    return 0;<br>}</p>
+
+      
+        
+
+  <div class="declare" hidden="hidden"></div>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">主席树</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">NOIP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数论</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">2017</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
+        			<a href="/categories/NOIP//" class="article-tag-list-link color5">NOIP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/NOIP/题解//" class="article-tag-list-link color3">题解</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://xslcj.github.io/2019/06/08/题解-洛谷P3951-NOIP2017-小凯的疑惑/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/05/27/主席树学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">主席树学习笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入输出格式"><span class="toc-number">2.</span> <span class="toc-text">输入输出格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#输入格式"><span class="toc-number">2.1.</span> <span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输出格式"><span class="toc-number">2.2.</span> <span class="toc-text">输出格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入输出样例"><span class="toc-number">3.</span> <span class="toc-text">输入输出样例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#输入样例-1"><span class="toc-number">3.1.</span> <span class="toc-text">输入样例#1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输出样例-1"><span class="toc-number">3.2.</span> <span class="toc-text">输出样例#1</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明"><span class="toc-number">4.</span> <span class="toc-text">说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#输入输出样例1-说明"><span class="toc-number">4.1.</span> <span class="toc-text">输入输出样例1 说明</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据范围与约定"><span class="toc-number">5.</span> <span class="toc-text">数据范围与约定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#include"><span class="toc-number"></span> <span class="toc-text">include </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include-1"><span class="toc-number"></span> <span class="toc-text">include </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include-2"><span class="toc-number"></span> <span class="toc-text">include </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include-3"><span class="toc-number"></span> <span class="toc-text">include </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include-4"><span class="toc-number"></span> <span class="toc-text">include </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include-5"><span class="toc-number"></span> <span class="toc-text">include </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include-6"><span class="toc-number"></span> <span class="toc-text">include </span></a>
+                    </li></div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  
+  </section>
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -228,9 +385,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,

@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://xslcj.github.io">
-  <title>题解[CodeForces1154A]Restoring Three Numbers.md | BrownBear的小屋</title>
+  <title>题解[CodeForces1154A]Restoring Three Numbers | BrownBear的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="DescriptionPolycarp has guessed three positive integers $a$, $b$ and $c$. He keeps these numbers in secret, but he writes down four numbers on a board in arbitrary order — their pairwise sums (three n">
 <meta name="keywords" content="CodeForces题解,数论">
 <meta property="og:type" content="article">
-<meta property="og:title" content="题解[CodeForces1154A]Restoring Three Numbers.md">
+<meta property="og:title" content="题解[CodeForces1154A]Restoring Three Numbers">
 <meta property="og:url" content="http://xslcj.github.io/2019/05/13/题解-CodeForces1154-A-Restoring-Three-Numbers/index.html">
 <meta property="og:site_name" content="BrownBear的小屋">
 <meta property="og:description" content="DescriptionPolycarp has guessed three positive integers $a$, $b$ and $c$. He keeps these numbers in secret, but he writes down four numbers on a board in arbitrary order — their pairwise sums (three n">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-28T13:30:42.161Z">
+<meta property="og:updated_time" content="2019-06-06T13:51:10.633Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="题解[CodeForces1154A]Restoring Three Numbers.md">
+<meta name="twitter:title" content="题解[CodeForces1154A]Restoring Three Numbers">
 <meta name="twitter:description" content="DescriptionPolycarp has guessed three positive integers $a$, $b$ and $c$. He keeps these numbers in secret, but he writes down four numbers on a board in arbitrary order — their pairwise sums (three n">
   
     <link rel="alternative" href="/atom.xml" title="BrownBear的小屋" type="application/atom+xml">
@@ -150,7 +150,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      题解[CodeForces1154A]Restoring Three Numbers.md
+      题解[CodeForces1154A]Restoring Three Numbers
     </h1>
   
 
@@ -499,31 +499,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">CodeForces题解</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UVA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">USACO</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,7 +519,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UVA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">2017</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">2015</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">USACO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">主席树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,10 +552,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">分块</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">主席树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -703,6 +707,21 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
